@@ -5,22 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="homepage.css">
-    <title>Stephanie Hong's Website</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Stephanie Hong</title>
 </head>
 <body>
     <div class="wrapper">
-        <header class="header">
-            <a href="#"><img src="img/wallmural.jpg" alt="Jello Bagel HomePage. Click for home."></a>
-        </header>
-        <nav>
-            <ul class="navbar row">
-                <li class="navlink"><a href="#">Home</a></li>
-                <li class="navlink"><a href="#">About</a></li>
-                <li class="navlink"><a href="#">Javascript</a></li>
-                <li class="navlink"><a href="#">Unity</a></li>
-                <li class="navlink"><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <div id="header"></div>
         <div class="main-content row">
             <article class="col-3">
                 <h2>Hello World</h2>
@@ -41,16 +31,12 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id arcu fringilla, sollicitudin orci nec, congue felis.  </p>
                 </aside>
             </div>
-        </div>
-        <footer class="footer row">
-            <p class="col-4">Copyright 2018, Stephanie Hong &#183; San Francisco Bay Area </p>
-            <p class="col-4">
-                <a href="http://www.GitHub.com" target="_blank"><img src="img/github.png" alt="GitHub."></a>
-                <a href="http://www.LinkedIn.com" target="_blank"><img src="img/linked.png" alt="LinkedIn."></a>
-                <a href="http://www.instagram.com" target="_blank"><img src="img/insta4.png" alt="Instagram."></a>
-                <a href="http://www.facebook.com" target="_blank"><img src="img/fb5.png" alt="Facebook."></a>
-            </p>
-        </footer>  
+        </div> 
+        <div id="footer"></div>
     </div>  
+    <script>
+        $( "#header" ).load( "header.html" );
+        $( "#footer" ).load( "footer.html" );
+    </script>
 </body>
 </html>
