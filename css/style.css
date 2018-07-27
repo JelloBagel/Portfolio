@@ -49,14 +49,25 @@ h1 {
 
 .navbar {
     background-color: #fff;
-    border: 0;
-    border-radius: 3px;
     padding: .625rem 0;
     margin-bottom: 20px;
     color: #555;
     box-shadow: 
         0 4px 18px 0 rgba(0,0,0,.12), 
         0 7px 10px -5px rgba(0,0,0,.15);
+}
+
+.navbar-fixed {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.navbar-transparent {
+    background: linear-gradient(rgba(0, 0, 0, 0.425),rgba(0,0,0,0));
+    box-shadow: none;
+    color: #fff;
 }
 
 .navbar-brand {
@@ -93,14 +104,14 @@ h1 {
 }
 
 .page-header { 
-    background-image: url("./img/wallmural.jpg");
+    background-image: url("../img/wallmural.jpg");
     transform: translateY(0px);
     background-position: 60%;
     background-size: cover;
     display: flex;
     align-items: center;
     position: relative;
-    height: 50vh;
+    height: 60vh;
     overflow: hidden;
     /*update transform: translate3d (y-axis)*/
 }
@@ -204,6 +215,12 @@ footer a:hover {
     .container {
         max-width: 720px;
     }
+
+    .col-md-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
     .col-md-8 {
         flex: 0 0 66.666667%;
         max-width: 66.666667%;
