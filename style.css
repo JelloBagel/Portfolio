@@ -145,6 +145,11 @@ h1 {
 
 .features-1 {
     text-align: center;
+}
+
+.main-info {
+    max-width: 360px;
+    margin: 0 auto;
     padding: 30px 0;
 }
 
@@ -189,17 +194,6 @@ footer a:hover {
     margin-right: auto;
 }
 
-.col-md-8 {
-    flex: 0 0 66.666667%;
-    max-width: 66.666667%;
-}
-
-.col-md-4 {
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
-}
-
-
 @media (min-width: 576px) {
     .container {
         max-width: 540px;
@@ -213,6 +207,11 @@ footer a:hover {
     .col-md-8 {
         flex: 0 0 66.666667%;
         max-width: 66.666667%;
+    }
+
+    .col-md-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
     }
 }
 
