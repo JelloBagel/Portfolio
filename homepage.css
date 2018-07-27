@@ -57,13 +57,14 @@ h1,h2,h3,h4,h5,h6 {
 /*homepage content - inherits from .row*/
 .main-content {
     background-color: #fff6e0;
+    align-items: flex-start;
 }
 
 [class*='sidebar'] {
     border: 1px solid #00c4c7;
     border-radius: 10px;
     margin-bottom: 1em;
-    margin-top: 2.5em;
+    margin-top: 1em;
 }
 [class*='sidebar'] h3 {
     margin: 0;
@@ -73,29 +74,14 @@ h1,h2,h3,h4,h5,h6 {
     border-top-right-radius: 10px;
     padding-left: 0.5em;
 }
-[class*='sidebar'] img {
-    border-radius: 0px 0px 10px 10px;
-    width: 100%;
-    max-width: 250px;
-} 
+[class*='sidebar'] p {
+    padding: 0% 4%;
+}
 .sidebar-secondary {
     border-color: #c80060;
 }
 .sidebar-secondary h3 {
     background-color: #c80060;
-}
-blockquote {
-    padding: 0em;
-    margin: 0;
-}
-blockquote p, 
-blockquote cite {
-    padding: 0 1em;
-}
-blockquote cite {
-    text-transform: uppercase;
-    font-style: normal;
-    padding-bottom: 1em;
 }
 
 /*footer css - inherits from .row*/
@@ -104,6 +90,7 @@ blockquote cite {
     color: white;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 .col-4 {
     margin: 0;
