@@ -124,7 +124,6 @@ footer a:hover {
 }
 
 .page-header { 
-    background-image: url("../img/wallmural.jpg");
     transform: translateY(0px);
     background-position: 60%;
     background-size: cover;
