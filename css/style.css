@@ -21,7 +21,7 @@ a {
 }
 h1 {
     font-size: 4rem;
-    font-weight: 600;
+    font-weight: 700;
     display: inline-block;
     position: relative;
     line-height: 1.15em;
@@ -144,6 +144,7 @@ footer a:hover {
     text-align: center;
 }
 
+
 .main {
     background: #fff;
     position: relative;
@@ -177,6 +178,7 @@ footer a:hover {
     color: #999;
     text-align: center;
     line-height: 1.4em;
+    font-weight: 600;
 }
 
 .features {
