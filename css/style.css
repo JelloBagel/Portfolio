@@ -227,10 +227,6 @@ body .main .about-me {
     margin-right: auto;
 }
 
-body .navbar .navbar-nav {
-    display: none;
-}
-
 @media (min-width: 576px) {
     .container {
         max-width: 540px;
@@ -259,14 +255,6 @@ body .navbar .navbar-nav {
     .col-md-3 {
         flex: 0 0 25%;
         max-width: 25%;
-    }
-
-    body .navbar .navbar-hamburger {
-        display: none;
-    }
-
-    body .navbar .navbar-nav {
-        display: flex;
     }
 }
 
