@@ -38,7 +38,17 @@ h3 {
     text-shadow: 0.1em 0.1em rgb(36, 36, 36);
 }
 img {
-    width: 200px;
+    vertical-align: middle;
+    border-style: none;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
 }
 
 .container {
@@ -217,6 +227,14 @@ body .main .p-about-me {
     text-align: left;
 }
 
+.card-body {
+    background-color: rgb(241, 236, 236);
+    padding: 10% 0;
+}
+.card-text{
+    margin-top: 0;
+}
+
 
 [class*='col'] {
     width: 100%;
@@ -252,14 +270,18 @@ body .main .p-about-me {
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
     }
-    .col-md-3 {
-        flex: 0 0 25%;
-        max-width: 25%;
+    .col-md-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
     }
 }
 
 @media (min-width: 992px) {
     .container {
         max-width: 960px;
+    }
+    .col-lg-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
     }
 }
