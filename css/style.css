@@ -229,12 +229,11 @@ body .main .p-about-me {
 
 .card-body {
     background-color: rgb(241, 236, 236);
-    padding: 10% 0;
+    padding: 10% 5%;
 }
 .card-text{
     margin-top: 0;
 }
-
 
 [class*='col'] {
     width: 100%;
