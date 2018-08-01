@@ -1,3 +1,4 @@
+
 aboutButton = $('.main .features .button-feature.button-about');
 
 aboutButton.on('click', function() {

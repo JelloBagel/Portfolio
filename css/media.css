@@ -1,0 +1,11 @@
+.card {
+    height: 100%;
+    background-color: rgb(241, 236, 236);
+}
+.card-body {
+    background-color: rgb(241, 236, 236);
+    padding: 10% 5%;
+}
+.card-text{
+    margin-top: 0;
+}
