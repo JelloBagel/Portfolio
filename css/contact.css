@@ -1,0 +1,16 @@
+.main .contact-me-info {
+    background-color: rgb(241, 236, 236);
+    border-radius: 2%;
+}
+.main .contact-me-info .contact-details{
+    text-align: left;
+    font-style: normal;
+}
+
+.main .contact-me-info .contact-details h4 {
+    margin-bottom: 0;
+}
+
+.main .contact-me-info .contact-details p {
+    margin-top: 0;
+}
