@@ -286,7 +286,7 @@ body .main .p-about-me {
 
 @media (max-width: 576px) {
     .nav-hamburger-img {
-        height: 40px;
+        height: 35px;
     }
     .navbar-toggler {
         background-color: transparent;
