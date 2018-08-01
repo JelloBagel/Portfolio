@@ -227,7 +227,7 @@ body .main .p-about-me {
     text-align: left;
 }
 
-[class*='col'] {
+[class*='col-'] {
     width: 100%;
     min-height: 1px;
     padding-right: 15px;
@@ -276,3 +276,50 @@ body .main .p-about-me {
         max-width: 25%;
     }
 }
+
+/*testing hamburger function*/
+@media (min-width: 576px) {
+    .navbar-toggler{
+        display:none;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-hamburger-img {
+        height: 40px;
+    }
+    .navbar-toggler {
+        background-color: transparent;
+        border-style: none;
+    }
+    .navbar-collapse {
+        position: fixed;
+        display: block;
+        top: 0;
+        height: 100vh;
+        width: 230px;
+        right: 0;
+        margin-right: 0;
+        z-index: 1032;
+        visibility: visible;
+        background-color:  #fdfdfd;
+        color: #555;
+        overflow-y: visible;
+        border-top: none;
+        text-align: left;
+        padding-right: 0;
+        padding-left: 0;
+        -webkit-transform: translate3d(230px,0,0);
+        transform: translate3d(230px,0,0); /*should change when toggling hamburger button*/
+        transition: all .5s cubic-bezier(.685,.0473,.346,1);
+    }
+    .navbar-translate {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all .5s cubic-bezier(.685,.0473,.346,1);
+    }
+}
+
+
