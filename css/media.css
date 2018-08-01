@@ -9,3 +9,13 @@
 .card-text{
     margin-top: 0;
 }
+
+.main .imglist .ps-img {
+    max-width: 300px;
+    width: 100%;
+}
+
+.main .imglist .photography-img {
+    max-width: 300px;
+    width: 100%;
+}
