@@ -217,12 +217,7 @@ footer a:hover {
     font-size: 1.125rem;
     line-height: 1.5em;
 }
-.project-title {
-    font-size: 1.125rem;
-}
-.project-title:hover {
-    font-weight:800;
-}
+
 body .main .p-about-me {
     text-align: left;
 }
@@ -275,6 +270,10 @@ body .main .p-about-me {
         flex: 0 0 25%;
         max-width: 25%;
     }
+}
+
+.navbar-collapse {
+    transform: translate3d(0,0,0); 
 }
 
 /*testing hamburger function*/

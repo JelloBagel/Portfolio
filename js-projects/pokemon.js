@@ -1,10 +1,13 @@
 
-sendBtn = $('button.submit-btn');
+var sendBtn = $('button.submit-btn');
 var pokemonName = $('p.pokemon-name');
 var pokemonAbility = $('p.pokemon-ability');
 var pokemonChosen;
+var battleBtn = $('.battle-start');
+var battleText = $('.battle-text');
 
-sendBtn.on('click', function () {
+
+function selectingPokemon() {
     var x = $('input.pokemon-input').val();
     if (x != undefined) { 
         $.ajax({
@@ -12,34 +15,7 @@ sendBtn.on('click', function () {
             contentType: 'json',
 
             success: function(result) {
-                pokemonChosen = result;
-                pokemonName.text(result.name);
-
-                if (result.films === undefined || result.films.length === 0) {
-                    pokemonAbility.text("Does not own a ship");
-                } else {
-                    var arrayOfShips = [];
-                    $.when(
-                        $.each(result.films, function(film) {
-                            $.ajax({
-                                url: film,
-                                contentType: 'json',
-    
-                                success: function(value) {
-                                    arrayOfShips.push(value.title);
-                                    console.log(value.title);
-                                },
-                                error: function() {
-                                    console.log("cant find my ship");
-                                }
-                            });
-                        })
-                    ).then( function() {
-                    console.log(arrayOfShips);
-                    console.log(arrayOfShips[1]);
-                    pokemonAbility.text(arrayOfShips.join(', '));
-                    });
-                }
+                shipSelection(result);
             },
 
             error: function() {
@@ -49,14 +25,39 @@ sendBtn.on('click', function () {
 
         });
     }
-});
+}
 
-battleBtn = $('.battle-start');
-battleText = $('.battle-text');
+function shipSelection() {
+    pokemonChosen = result;
+    pokemonName.text(result.name);
 
-battleBtn.on('click', function(){
-    randomPokemonGenerator();
-});
+    if (result.films === undefined || result.films.length === 0) {
+        pokemonAbility.text("Does not own a ship");
+    } else {
+        var arrayOfShips = [];
+        $.when(
+            $.each(result.films, function(i, film) {
+                $.ajax({
+                    url: film,
+                    contentType: 'json',
+
+                    success: function(value) {
+                        arrayOfShips.push(value.title);
+                        //console.log(value.title);
+                    },
+                    error: function() {
+                        //console.log(film);
+                        console.log("cant find my ship");
+                    }
+                });
+            })
+        ).then( function() {
+        //console.log(arrayOfShips);
+        //console.log(arrayOfShips[1]);
+        pokemonAbility.text(arrayOfShips.join(', '));
+        });
+    }
+}
 
 var randomPokemonGenerator = function () {
     var randNum = Math.floor(Math.random()*88);
@@ -72,5 +73,11 @@ var randomPokemonGenerator = function () {
         } 
     });
 }
+
+sendBtn.on('click', selectingPokemon());
+
+battleBtn.on('click', function(){
+    randomPokemonGenerator();
+});
 
 //https://rickandmortyapi.com/api/character/2
