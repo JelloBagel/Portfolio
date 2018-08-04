@@ -1,65 +1,10 @@
-
-var sendBtn = $('button.submit-btn');
-var pokemonName = $('p.pokemon-name');
-var pokemonAbility = $('p.pokemon-ability');
+var inputPokemonName = $('input.input');
+var enterBtn = $('button.button');
+var pokemonName = $('p.output');
+var pokemonAbility = $('p.output-2');
 var pokemonChosen;
-var battleBtn = $('.battle-start');
-var battleText = $('.battle-text');
 
-
-function selectingPokemon() {
-    var x = $('input.pokemon-input').val();
-    if (x != undefined) { 
-        $.ajax({
-            url: "https://swapi.co/api/people/" + x + "/",
-            contentType: 'json',
-
-            success: function(result) {
-                shipSelection(result);
-            },
-
-            error: function() {
-                pokemonName.text("Not discovered yet");
-                pokemonAbility.text("Does not have TM-fly");
-            }
-
-        });
-    }
-}
-
-function shipSelection() {
-    pokemonChosen = result;
-    pokemonName.text(result.name);
-
-    if (result.films === undefined || result.films.length === 0) {
-        pokemonAbility.text("Does not own a ship");
-    } else {
-        var arrayOfShips = [];
-        $.when(
-            $.each(result.films, function(i, film) {
-                $.ajax({
-                    url: film,
-                    contentType: 'json',
-
-                    success: function(value) {
-                        arrayOfShips.push(value.title);
-                        //console.log(value.title);
-                    },
-                    error: function() {
-                        //console.log(film);
-                        console.log("cant find my ship");
-                    }
-                });
-            })
-        ).then( function() {
-        //console.log(arrayOfShips);
-        //console.log(arrayOfShips[1]);
-        pokemonAbility.text(arrayOfShips.join(', '));
-        });
-    }
-}
-
-var randomPokemonGenerator = function () {
+/*var randomPokemonGenerator = function () {
     var randNum = Math.floor(Math.random()*88);
     $.ajax({
         type: 'GET',
@@ -72,12 +17,33 @@ var randomPokemonGenerator = function () {
             console.log("Could not find opponent");
         } 
     });
+}*/
+
+/*battleBtn.on('click', function(){
+    randomPokemonGenerator();
+});*/
+
+function getPokemon() {
+    pokemonChosen = inputPokemonName.val();  
+    var urlInput = "http://pokeapi.co/api/v2/pokemon/" + pokemonChosen;
+    $.ajax({
+        url: urlInput,
+        dataType: 'json',
+        type: 'GET',
+        
+        success: function(pokemon) {
+            pokemonName.text(pokemon.name);
+            console.log(pokemon);
+            getAbilities();
+        },
+
+        error: function() {
+            pokemonName.text("Not in the Pokedex");
+        }
+    });
+    
 }
 
-sendBtn.on('click', selectingPokemon());
-
-battleBtn.on('click', function(){
-    randomPokemonGenerator();
+enterBtn.on('click', function() {
+    getPokemon();
 });
-
-//https://rickandmortyapi.com/api/character/2
