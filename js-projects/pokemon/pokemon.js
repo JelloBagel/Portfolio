@@ -17,7 +17,7 @@ function loadingUpdate(loader) {
 
 function getPokemon(pokemonChosen) {
     loadingUpdate(loadSpinner);
-    var urlInput = "http://pokeapi.net/api/v2/pokemon/" + pokemonChosen;
+    var urlInput = "https://pokeapi.co/api/v2/pokemon/" + pokemonChosen;
     $.ajax({
         url: urlInput,
         dataType: 'json',
@@ -46,7 +46,7 @@ function getAbilities(pokemon) {
 function randOpponent() {
     loadingUpdate(loadSpinner2);
     var randNum = Math.floor(Math.random()*88);
-    var urlInput = "http://pokeapi.net/api/v2/pokemon/" + randNum;
+    var urlInput = "https://pokeapi.co/api/v2/pokemon/" + randNum;
     $.ajax({
         url: urlInput,      
         dataType: 'json',
