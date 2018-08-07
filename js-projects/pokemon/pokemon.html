@@ -5,24 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./pokemon.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <title>Stephanie Hong</title>
 </head>
 <body>
-    <p>Pokemon Name</p>
-    <input class="input" type="text">
-    <button class="button">Enter
-        <div class="loader"></div>
-    </button>
-    <button class="rand-btn">Random</button>
-    <h1>YOU CHOOOSE:</h1><p class="output">Blank</p>
-    <h1>ABILITIES:</h1><p class="output-2">Blank</p>
-    <button class="battle-btn">Battle Start!
-        <div class="loader-2"></div>
-    </button>
-    <p class="opponent"></p>
-    <p class="battle-text"></p>
+    <div class="container">
+        <div class="player-select col-12">
 
-     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <div class="pokemon-input col-12">
+                <p>Pokemon Name</p>
+                <input class="input" type="text">
+                <button class="button">Enter
+                    <div class="loader"></div>
+                </button>
+                <button class="rand-btn">Random</button>
+            </div>
+
+            <div class="pokemon-chosen col-4">
+                <h1 class="pokemon-title">YOU CHOSE:</h1>
+                <p class="output">Blank</p>
+                <div class="pokemon-img"></div>
+            </div>
+
+            <div class="moves col-4">
+                <h3 class="moves-title">MOVES:</h3>
+                <form class="output-2">
+                    <input type="checkbox">Blank<br>
+                </form>
+            </div>
+        </div>
+
+        <div class="pokeball-center col-5"></div>
+            <button class="battle-btn col-2">Battle Start!
+                <div class="loader-2"></div>
+            </button>
+        <div class="pokeball-center col-5"></div>
+
+        <div class="battle">
+            <div class="battlefield">
+                <div class="player-pokemon-info">php</div>
+                <div class="player-pokemon-img">pimg</div>
+
+                <div class="opponent-pokemon-info">ohp</div>
+                <div class="opponent-pokemon-img">oimg</div>
+            </div>
+            <p class="battle-text">Temp</p>
+            <p class="battle-options">Temp</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="./pokemon.js"></script>
 </body>
 </html>

@@ -1,8 +1,35 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Press Start 2P', Arial, cursive;
+    background-color: rgb(43, 42, 42);
+    text-align: left;
+    margin: 0;
+}
+
+.container {
+    background-color: #f3f3f3;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 [class*="loader"] {
     display: none;
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */
-    border-radius: 50%;
+    border-radius: 100%;
     animation: spin 2s linear infinite;
 }
 
@@ -12,6 +39,83 @@
 }
 
 .loader-2 {
-    border: 30px solid #f3f3f3; /* Light grey */
-    border-top: 30px solid #3498db; /* Blue */
+    width: 10px;
+}
+
+.player-select {
+    background-color: rgb(199, 38, 38);
+    display: flex;
+    justify-content: flex-start;
+    align-content: flex-start;
+    flex-flow: row wrap;
+    padding-bottom: 5%;
+}
+
+.pokemon-img {
+    background-color: grey;
+}
+
+.battle {
+    border: 2px solid black;
+}
+
+.pokeball-center {
+    background-color: black;
+    height:30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.battle-btn {
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 100%;
+    padding: 5% 0;
+    margin:-5%;
+    z-index: 1;
+}
+
+
+.battle {
+    margin-top: 5%; 
+    display: flex;
+    justify-content: center;
+}
+
+[class*='col-'] {
+    width: 100%;
+}
+.col-12 {
+    flex: 0 0 100%;
+}
+
+.col-5 {
+    flex: 0 0 45%;
+}
+
+.col-4 {
+    flex: 0 0 33.33%
+}
+
+.col-2 {
+    flex: 0 0 20%;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
 }
