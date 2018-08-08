@@ -120,6 +120,10 @@ img {
     border-radius: 3px;
     line-height: 20px;
 }
+a.pdf {
+    background: transparent url("../img/pdf.png") center right no-repeat;
+    padding-right: 23px;
+}
 
 .footer {
     background-color: #00CDD1;
