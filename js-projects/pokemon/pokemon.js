@@ -6,20 +6,25 @@ var randBtn = $('button.rand-btn');
 var loadSpinner = $('div.loader');
 var pokemonName = $('p.output');
 var pokemonMoves = $('form.output-2');
+var pokemonTypes = $('ul.types-list');
 var pokemonChosen;
 
 var battleBtn = $('button.battle-btn');
-var opponent = $('p.opponent');
-var battleText = $('p.battle-text');
 var loadSpinner2 = $('div.loader-2');
+
+var opponentChosen;
+var battleText = $('p.battle-innertext');
 
 function loadingUpdate(loader) {
     loader.show();
 }
 
 function getPokemon(pokemonInput) {
-    if (pokemonInput){
-    loadingUpdate(loadSpinner);
+    if (pokemonInput) {
+        if (typeof pokemonInput === "string") {
+            pokemonInput = pokemonInput.toLowerCase();
+        }
+        loadingUpdate(loadSpinner);
         var urlInput = "https://pokeapi.co/api/v2/pokemon/" + pokemonInput;
         $.ajax({
             url: urlInput,
@@ -29,9 +34,11 @@ function getPokemon(pokemonInput) {
             success: function(pokemon) {
                 loadSpinner.hide();
                 pokemonChosen = pokemon;
+                $(".moves-req").css("background-color", "inherit");
                 getName(pokemon);
+                getFrontImage(pokemon, $('div.pokemon-img'));
                 getMoves(pokemon);
-                getImage(pokemon);
+                getTypes(pokemon);
             },
 
             error: function() {
@@ -41,11 +48,17 @@ function getPokemon(pokemonInput) {
         });
     }
 }
+
 function getName(pokemon) {
     pokemonName.empty();
     pokemonName.text(pokemon.name.toUpperCase());
 }
 
+function getFrontImage(pokemon, htmlLocation) {
+    htmlLocation.empty();
+    console.log(pokemon);
+    htmlLocation.prepend(`<img class="poke-img" src="${pokemon.sprites.front_default}" />`);
+}
 
 function getMoves(pokemon) {
     var movesArray = pokemon.moves.map(function(moveObj) {
@@ -68,23 +81,28 @@ function getMoves(pokemon) {
     });
 }
 
-function getImage(pokemon) {
-    $('div.pokemon-img').empty();
-    $('div.pokemon-img').prepend(`<img class="poke-img" src="${pokemon.sprites.front_default}" />`);
+function getTypes(pokemon) {
+    var typesArray = pokemon.types.map(function(typeObj) {
+        return typeObj.type.name;
+    }); 
+
+    pokemonTypes.empty();
+    $.each(typesArray, function(type) {
+        pokemonTypes.prepend(`<li class="poke-type">${typesArray[type]} </li>`);
+    });
 }
 
+
 function randOpponent() {
-    loadingUpdate(loadSpinner2);
-    var randNum = Math.floor(Math.random()*88);
-    var urlInput = "https://pokeapi.co/api/v2/pokemon/" + randNum;
+    var urlInput = "https://pokeapi.co/api/v2/pokemon/" + randomNum();
     $.ajax({
         url: urlInput,      
         dataType: 'json',
         type: 'GET',
 
         success: function(char) {
-            opponent.text("Wild " + char.name.toUpperCase() + " appeared!");
-            battle(char);
+            opponentChosen = char;
+            battleController();
         },
         error: function() {
             console.log("Could not find opponent");
@@ -93,7 +111,7 @@ function randOpponent() {
 }
 
 //random battle system
-function battle(opponent) {
+/*function battle(opponent) {
     var myHealth = 100;
     var oppHealth = 100;
     var doDMG, takeDMG;
@@ -111,31 +129,58 @@ function battle(opponent) {
         battleText.append(`<br> ${pokemonName.text()} wins!`); 
     }
     loadSpinner2.hide();
+}*/
+
+function getBackImage() {
+    $('div.player-pokemon-img').empty();
+    $('div.player-pokemon-img').prepend(`<img class="poke-img" src="${pokemonChosen.sprites.back_default}" />`);
 }
 
+function battleController() {
+    //load pokemon img chosen by player
+    getBackImage();
+
+    //load random pokemon img 
+    getFrontImage(opponentChosen, $('.opponent-pokemon-img'));
+
+    //load text
+    //get hp 
+    //get move damage
+}
+
+//need exactly 4 moves to have battle start
+function countChecked() { 
+    return n = $(".output-2 input:checked").length;
+};
+
+//generates random num based on count of pokemon
+//poke.co has 801
+//salestock has 720
+function randomNum() {
+    return Math.floor(Math.random()*720 + 1)
+}
 
 enterBtn.on('click', function() {
     getPokemon(inputPokemonName.val());
 });
 
 randBtn.on('click', function() {
-    getPokemon(Math.floor(Math.random()*721 + 1)); //number of different pokemon in the API
+    getPokemon(randomNum()); //count of different pokemon in the API
 });
 
 battleBtn.on('click', function(){
-    randOpponent(); //not clickable until player selects a pokemon
-    //display battlefield only when battle start is clicked 
-    $(".battlefield").prepend('<img src="./grass-battlefield.png" alt="grass battlefield">');
+    //not clickable until player selects 4 moves
+    if (countChecked() != 4) {
+        $(".moves-req").css("background-color", "yellow");
+    } else {
+        //loadingUpdate(loadSpinner2);
+        randOpponent();
+    }
 });
 
-//clear previous pokemon chose
-//print image of pokemon and opponent
-//get pokemon ability for damage
-//select 4 moves to use to battle
 //double dmg for weakness
 //animate pokemon attack
 //replace input bar with search and select
-//lowercase all input for url
 
 
 

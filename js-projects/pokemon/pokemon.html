@@ -13,7 +13,7 @@
         <div class="player-select col-12">
 
             <div class="pokemon-input col-12">
-                <p>Pokemon Name</p>
+                <p>Enter a Pokemon: </p>
                 <input class="input" type="text">
                 <button class="button">Enter
                     <div class="loader"></div>
@@ -22,44 +22,61 @@
             </div>
 
             <div class="pokemon-chosen col-4">
-                <h1 class="pokemon-title">YOU CHOSE:</h1>
+                <h2 class="pokemon-title">YOU CHOSE:</h2>
                 <p class="output">Blank</p>
                 <div class="pokemon-img"></div>
             </div>
 
             <div class="moves col-4">
                 <h3 class="moves-title">MOVES:</h3>
+                <p class="moves-req">(select 4 moves)</p>
                 <form class="output-2">
                     <input type="checkbox">Blank<br>
                 </form>
             </div>
 
             <div class="types col-4">
-                <h3 class="types-title">TYPES:</h3>
-                <ul>
+                <h3 class="types-title">TYPE:</h3>
+                <ul class="types-list">
                     <li>Blank</li>
                 </ul>
             </div>
         </div>
 
         <div class="pokeball-center col-5"></div>
-            <button class="battle-btn col-2">Battle Start!
+            <button class="battle-btn col-2">
+                <p>Battle Start!</p>
                 <div class="loader-2"></div>
             </button>
         <div class="pokeball-center col-5"></div>
 
-        <div class="battle">
-            <div class="battlefield">
-                <!--<img src="./grass-battlefield.png" alt="grass battlefield">--><!--testing field-->
+        <div class="battle-section col-12"> 
+            <div class="battle">
+                <div class="battlefield battlefield-img">
+                    <div class="opponent-row">
+                        <div class="opponent-pokemon-info">ohp</div>
+                        <div class="opponent-pokemon-img">oimg</div>
+                    </div>
 
-                <div class="player-pokemon-info">php</div>
-                <div class="player-pokemon-img">pimg</div>
+                    <div class="player-row">
+                        <div class="player-pokemon-img">pimg</div>
+                        <div class="player-pokemon-info">php</div> 
+                    </div>
 
-                <div class="opponent-pokemon-info">ohp</div>
-                <div class="opponent-pokemon-img">oimg</div>
-            </div>
-            <p class="battle-text">Temp</p>
-            <p class="battle-options">Temp</p>
+
+                    <div class="battle-info">
+                        <div class="battle-text">
+                            <p class="battle-innertext">Temp</p>   
+
+                            <div class="battle-options">
+                                <button class="move-1">Temp</button>
+                                <button class="move-2">Temp</button>
+                                <button class="move-3">Temp</button>
+                                <button class="move-4">Temp</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
             </div>
         </div>
     </div>
