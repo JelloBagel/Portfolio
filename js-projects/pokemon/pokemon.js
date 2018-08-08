@@ -17,10 +17,10 @@ function loadingUpdate(loader) {
     loader.show();
 }
 
-function getPokemon(pokemonChosen) {
-    if (pokemonChosen) {
+function getPokemon(pokemonInput) {
+    if (pokemonInput){
     loadingUpdate(loadSpinner);
-        var urlInput = "https://pokeapi.co/api/v2/pokemon/" + pokemonChosen;
+        var urlInput = "https://pokeapi.co/api/v2/pokemon/" + pokemonInput;
         $.ajax({
             url: urlInput,
             dataType: 'json',
@@ -28,7 +28,8 @@ function getPokemon(pokemonChosen) {
             
             success: function(pokemon) {
                 loadSpinner.hide();
-                pokemonName.text(pokemon.name.toUpperCase());
+                pokemonChosen = pokemon;
+                getName(pokemon);
                 getMoves(pokemon);
                 getImage(pokemon);
             },
@@ -40,6 +41,11 @@ function getPokemon(pokemonChosen) {
         });
     }
 }
+function getName(pokemon) {
+    pokemonName.empty();
+    pokemonName.text(pokemon.name.toUpperCase());
+}
+
 
 function getMoves(pokemon) {
     var movesArray = pokemon.moves.map(function(moveObj) {
@@ -56,12 +62,14 @@ function getMoves(pokemon) {
     };
 
     //creates new checkbox per move found so player can select 4 moves for battle
+    pokemonMoves.empty();
     $.each(randomNumArray, function(num) {
         pokemonMoves.append(`<input type="checkbox" name="pokemonMove" value="${movesArray[num]}">${movesArray[num]} <br>`)
     });
 }
 
 function getImage(pokemon) {
+    $('div.pokemon-img').empty();
     $('div.pokemon-img').prepend(`<img class="poke-img" src="${pokemon.sprites.front_default}" />`);
 }
 
@@ -127,6 +135,7 @@ battleBtn.on('click', function(){
 //double dmg for weakness
 //animate pokemon attack
 //replace input bar with search and select
+//lowercase all input for url
 
 
 
