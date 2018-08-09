@@ -1,19 +1,31 @@
 //http://pokeapi.salestock.net/api/v2/pokemon/ for WAMP
 //https://pokeapi.co/api/v2/pokemon/ for web
-var inputPokemonName = $('input.input');
-var enterBtn = $('button.button');
-var randBtn = $('button.rand-btn');
-var loadSpinner = $('div.loader');
-var pokemonName = $('p.output');
-var pokemonMoves = $('form.output-2');
-var pokemonTypes = $('ul.types-list');
-var pokemonChosen;
+const inputPokemonName = $('input.input');
+const enterBtn = $('button.button');
+const randBtn = $('button.rand-btn');
+const loadSpinner = $('div.loader');
+const pokemonName = $('p.output');
+const pokemonMoves = $('form.output-2');
+const pokemonTypes = $('ul.types-list');
+var playerChosenObj;
+const playerPokemonStats = {
+    "hp": 0,
+    "att": 0,
+    "def": 0,
+    "speed": 0,
+};
 
-var battleBtn = $('button.battle-btn');
-var loadSpinner2 = $('div.loader-2');
+const battleBtn = $('button.battle-btn');
+const loadSpinner2 = $('div.loader-2');
 
-var opponentChosen;
-var battleText = $('p.battle-innertext');
+var opponentChosenObj;
+const opponentPokemonStats = {
+    "hp": 0,
+    "att": 0,
+    "def": 0,
+    "speed": 0,
+};
+const battleText = $('p.battle-innertext');
 
 function loadingUpdate(loader) {
     loader.show();
@@ -33,7 +45,7 @@ function getPokemon(pokemonInput) {
             
             success: function(pokemon) {
                 loadSpinner.hide();
-                pokemonChosen = pokemon;
+                playerChosenObj = pokemon;
                 $(".moves-req").css("background-color", "inherit");
                 getName(pokemon);
                 getFrontImage(pokemon, $('div.pokemon-img'));
@@ -56,7 +68,6 @@ function getName(pokemon) {
 
 function getFrontImage(pokemon, htmlLocation) {
     htmlLocation.empty();
-    console.log(pokemon);
     htmlLocation.prepend(`<img class="poke-img" src="${pokemon.sprites.front_default}" />`);
 }
 
@@ -101,7 +112,7 @@ function randOpponent() {
         type: 'GET',
 
         success: function(char) {
-            opponentChosen = char;
+            opponentChosenObj = char;
             battleController();
         },
         error: function() {
@@ -133,19 +144,97 @@ function randOpponent() {
 
 function getBackImage() {
     $('div.player-pokemon-img').empty();
-    $('div.player-pokemon-img').prepend(`<img class="poke-img" src="${pokemonChosen.sprites.back_default}" />`);
+    if (playerChosenObj.sprites.back_default) {
+        $('div.player-pokemon-img').prepend(`<img class="poke-img" src="${playerChosenObj.sprites.back_default}" />`);
+    } else {
+        $('div.player-pokemon-img').prepend(`<img class="poke-img" src="${playerChosenObj.sprites.front_default}" />`);
+    }
+    
+}
+
+function assignPokemonStats(pokemonStats, pokemonObj) {
+    //check thorugh each stat for variables for both pokemon
+    $.each(pokemonObj.stats, function(pokemon) {
+        switch (pokemonObj.stats[pokemon].stat.name) {
+            case "hp": 
+                pokemonStats.hp = pokemonObj.stats[pokemon].base_stat;
+                break;
+            case "attack":
+                pokemonStats.att = pokemonObj.stats[pokemon].base_stat;
+                break;
+            case "defense": 
+                pokemonStats.def = pokemonObj.stats[pokemon].base_stat;
+                break;
+            case "speed": 
+                pokemonStats.speed = pokemonObj.stats[pokemon].base_stat;
+                break;
+            default:
+                break;
+        }
+    });
+}
+
+function loadDisplay(playerHp, opponentHp) {
+    const oppHP = $("progress.opponent-hp");
+    oppHP.max = opponentPokemonStats.hp;
+    oppHP.value = opponentHp;
+
+    const oppName = $(".opponent-pokemon-name");
+    oppName.text(opponentChosenObj.name);
+
+    const playerHP = $("progress.player-hp");
+    playerHP.max = playerPokemonStats.hp;
+    playerHP.value = playerHp;
+
+    const playerName = $(".player-pokemon-name");
+    playerName.text(playerChosenObj.name);
+}
+
+function calculateDamage() {
+
+}
+
+function updateDisplay(damageHp, damaged) {
+    if (damaged === "player") {
+        const playerHP = $("progress.player-hp");
+        playerHP.value = playerHp;
+    } else if (damaged === "opponent"){
+        const oppHP = $("progress.opponent-hp");
+        oppHP.value = opponentHp;
+    }
 }
 
 function battleController() {
+    //found random opponent already
+
     //load pokemon img chosen by player
     getBackImage();
 
     //load random pokemon img 
-    getFrontImage(opponentChosen, $('.opponent-pokemon-img'));
+    getFrontImage(opponentChosenObj, $('.opponent-pokemon-img'));
 
-    //load text
-    //get hp 
-    //get move damage
+    //load variables
+    assignPokemonStats(playerPokemonStats, playerChosenObj);
+    assignPokemonStats(opponentPokemonStats, opponentChosenObj);
+    
+    var playerHp = playerPokemonStats.hp;
+    var opponentHp = opponentPokemonStats.hp;
+    loadDisplay(playerHp, opponentHp);
+
+    //function which moves checked
+        // inside function calculate damage
+        //store damage per move in variable
+
+    //calculate damage per pokemon
+    //get move damage move.power
+    //damage = (((12/5)*power of move*att/def)/50 +2)* modifier
+    //store damage in variables
+    
+    //while one player is not dead
+        //player move
+        //opponent move
+        //updateDisplay();
+    //print who won
 }
 
 //need exactly 4 moves to have battle start
@@ -181,6 +270,3 @@ battleBtn.on('click', function(){
 //double dmg for weakness
 //animate pokemon attack
 //replace input bar with search and select
-
-
-
