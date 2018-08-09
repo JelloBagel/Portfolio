@@ -37,7 +37,7 @@ function getPokemon(pokemonInput) {
             pokemonInput = pokemonInput.toLowerCase();
         }
         loadingUpdate(loadSpinner);
-        var urlInput = "https://pokeapi.co/api/v2/pokemon/" + pokemonInput;
+        const urlInput = "https://pokeapi.co/api/v2/pokemon/" + pokemonInput;
         $.ajax({
             url: urlInput,
             dataType: 'json',
@@ -72,12 +72,12 @@ function getFrontImage(pokemon, htmlLocation) {
 }
 
 function getMoves(pokemon) {
-    var movesArray = pokemon.moves.map(function(moveObj) {
+    const movesArray = pokemon.moves.map(function(moveObj) {
         return moveObj.move.name;
     }); 
 
     //too many moves for player to choose from -> limit selection 10 randomized
-    var randomNumArray = [];
+    const randomNumArray = [];
     while (randomNumArray.length < 10) {
         var randNum = Math.floor(Math.random()*pokemon.moves.length + 1);
         if (!randomNumArray.includes(randNum)) {//if the randomnum is not already in the numarray add to num array 
@@ -88,12 +88,12 @@ function getMoves(pokemon) {
     //creates new checkbox per move found so player can select 4 moves for battle
     pokemonMoves.empty();
     $.each(randomNumArray, function(num) {
-        pokemonMoves.append(`<input type="checkbox" name="pokemonMove" value="${movesArray[num]}">${movesArray[num]} <br>`)
+        pokemonMoves.append(`<input type="checkbox" class="pokemonMove" value="${movesArray[num]}">${movesArray[num]} <br>`)
     });
 }
 
 function getTypes(pokemon) {
-    var typesArray = pokemon.types.map(function(typeObj) {
+    const typesArray = pokemon.types.map(function(typeObj) {
         return typeObj.type.name;
     }); 
 
@@ -105,7 +105,7 @@ function getTypes(pokemon) {
 
 
 function randOpponent() {
-    var urlInput = "https://pokeapi.co/api/v2/pokemon/" + randomNum();
+    const urlInput = "https://pokeapi.co/api/v2/pokemon/" + randomNum();
     $.ajax({
         url: urlInput,      
         dataType: 'json',
@@ -120,27 +120,6 @@ function randOpponent() {
         } 
     });
 }
-
-//random battle system
-/*function battle(opponent) {
-    var myHealth = 100;
-    var oppHealth = 100;
-    var doDMG, takeDMG;
-    while (myHealth > 0 || oppHealth > 0) {
-        doDMG = Math.floor(Math.random()*100 + 1);
-        takeDMG = Math.floor(Math.random()*100 + 1);
-        myHealth -= takeDMG;
-        oppHealth -= doDMG;
-        battleText.append(`<br> ${pokemonName.text()} does ${doDMG} damage`); 
-        battleText.append(`<br> ${opponent.name.toUpperCase()} does ${takeDMG} damage`); 
-    }
-    if (myHealth <= oppHealth) {
-        battleText.append("<br> You LOSE!"); 
-    } else {
-        battleText.append(`<br> ${pokemonName.text()} wins!`); 
-    }
-    loadSpinner2.hide();
-}*/
 
 function getBackImage() {
     $('div.player-pokemon-img').empty();
@@ -174,6 +153,64 @@ function assignPokemonStats(pokemonStats, pokemonObj) {
     });
 }
 
+function readCheckedMoves() {
+    const chkArray = [];
+	
+	$(".pokemonMove:checked").each(function() {
+		chkArray.push($(this).val());
+    });
+    return chkArray;
+}
+
+function randOpponentMoves() {
+    const movesArray = opponentChosenObj.moves.map(function(moveObj) {
+        return moveObj.move.name;
+    }); 
+
+    //select 4 random moves for opponent
+    const randomNumArray = [];
+    while (randomNumArray.length < 4) {
+        var randNum = Math.floor(Math.random()*opponentChosenObj.moves.length + 1);
+        if (!randomNumArray.includes(randNum)) {//if the randomnum is not already in the numarray add to num array 
+            randomNumArray.push(randNum);
+        }
+    };
+
+    //creates new checkbox per move found so player can select 4 moves for battle
+    const opponentRandMoves = [];
+    $.each(randomNumArray, function(num) {
+        opponentRandMoves.push(movesArray[num]);
+    });
+
+    return opponentRandMoves;
+}
+
+function moveStats(movesArray) {
+    const moveStatsArray = []; 
+
+    $.each(movesArray, function(move) {
+        const urlInput = "http://pokeapi.salestock.net/api/v2/move/" + movesArray[move];
+        $.ajax({
+            url: urlInput,
+            dataType: 'json',
+            type: 'GET',
+            
+            success: function(moveObj) {
+                //store moves stats in moveStatsArray
+                    //get move damage move.power
+                //create new variable dmg where damage = (((12/5)*power of move*att/def)/50 +2)* modifier
+            },
+
+            error: function() {
+                console.log("Move not found");
+            }
+        });
+    });
+
+    //need to finish request before continuing
+    return moveStatsArray;
+}
+
 function loadDisplay(playerHp, opponentHp) {
     const oppHP = $("progress.opponent-hp");
     oppHP.max = opponentPokemonStats.hp;
@@ -188,10 +225,9 @@ function loadDisplay(playerHp, opponentHp) {
 
     const playerName = $(".player-pokemon-name");
     playerName.text(playerChosenObj.name);
-}
 
-function calculateDamage() {
-
+    //write WILD ____ appeared!
+    //change text of move buttons
 }
 
 function updateDisplay(damageHp, damaged) {
@@ -216,20 +252,15 @@ function battleController() {
     //load variables
     assignPokemonStats(playerPokemonStats, playerChosenObj);
     assignPokemonStats(opponentPokemonStats, opponentChosenObj);
-    
+
+    //returns as array of with 4 objects containing move and dmg properties
+    //const playerDealsDmg = moveStats(readCheckedMoves()); 
+    //const opponentDealsDmg = moveStats(randOpponentMoves());
+
     var playerHp = playerPokemonStats.hp;
     var opponentHp = opponentPokemonStats.hp;
     loadDisplay(playerHp, opponentHp);
 
-    //function which moves checked
-        // inside function calculate damage
-        //store damage per move in variable
-
-    //calculate damage per pokemon
-    //get move damage move.power
-    //damage = (((12/5)*power of move*att/def)/50 +2)* modifier
-    //store damage in variables
-    
     //while one player is not dead
         //player move
         //opponent move
