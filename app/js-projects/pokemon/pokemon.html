@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./pokemon.css">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <title>Stephanie Hong</title>
+</head>
+<body>
+    <div class="container">
+        <div class="player-select col-12">
+
+            <div class="pokemon-input col-12">
+                <p>Enter a Pokemon: </p>
+                <input class="input" type="text">
+                <button class="button">Enter
+                    <div class="loader"></div>
+                </button>
+                <button class="rand-btn">Random</button>
+            </div>
+
+            <div class="pokemon-chosen col-4">
+                <h2 class="pokemon-title">YOU CHOSE:</h2>
+                <p class="output">Blank</p>
+                <div class="pokemon-img"></div>
+            </div>
+
+            <div class="moves col-4">
+                <h3 class="moves-title">MOVES:</h3>
+                <p class="moves-req">(select 4 moves)</p>
+                <form class="output-2">
+                    <input type="checkbox">Blank<br>
+                </form>
+            </div>
+
+            <div class="types col-4">
+                <h3 class="types-title">TYPE:</h3>
+                <ul class="types-list">
+                    <li>Blank</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="pokeball-center col-5"></div>
+            <button class="battle-btn col-2">
+                <p>Battle Start!</p>
+                <div class="loader-2"></div>
+            </button>
+        <div class="pokeball-center col-5"></div>
+
+        <div class="battle-section col-12"> 
+            <div class="battle">
+                <div class="battlefield battlefield-img">
+                    <div class="battle-display">
+                        <div class="opponent-pokemon-info">
+                            <p class="opponent-pokemon-name"></p>
+                            <progress class="opponent-hp" value="100" max"100"></progress>
+                        </div>
+                        <div class="opponent-pokemon-img">oimg</div>
+
+                        <div class="player-pokemon-img">pimg</div>
+                        <div class="player-pokemon-info">           
+                            <p class="player-pokemon-name"></p>
+                            <progress class="player-hp" value="100" max"100"></progress>
+                        </div> 
+                    </div>
+
+
+                    <div class="battle-info">
+                        <div class="battle-text">
+                            <p class="battle-innertext">Temp</p>   
+
+                            <div class="battle-options">
+                                <button class="move-1">Temp</button>
+                                <button class="move-2">Temp</button>
+                                <button class="move-3">Temp</button>
+                                <button class="move-4">Temp</button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="./pokemon.js"></script>
+</body>
+</html>

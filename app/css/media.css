@@ -1,0 +1,36 @@
+.card-deck {
+    margin-bottom: 5%;
+}
+.card {
+    height: 100%;
+    background-color: rgb(241, 236, 236);
+}
+.card-body {
+    background-color: rgb(241, 236, 236);
+    padding: 10% 5%;
+}
+.card-text{
+    margin-top: 0;
+}
+
+.main .imglist .ps-img {
+    max-width: 300px;
+    width: 100%;
+}
+
+.main .imglist .photography-img {
+    max-width: 300px;
+    width: 100%;
+}
+
+
+.imglist img {
+    margin-bottom: 10%;
+    border: 2px solid #3c4858;
+}
+
+@media (min-width: 992px) {
+    .card-deck {
+        margin-bottom: 2%;
+    }
+}
