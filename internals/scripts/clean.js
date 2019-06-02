@@ -15,8 +15,8 @@ process.stdout.write('Cleanup started...');
 
 // Reuse existing LanguageProvider and i18n tests
 shell.mv(
-  'app/containers/LanguageProvider/tests',
-  'internals/templates/containers/LanguageProvider',
+  'app/data-modules/LanguageProvider/tests',
+  'internals/templates/data-modules/LanguageProvider',
 );
 shell.cp('app/tests/i18n.test.js', 'internals/templates/tests/i18n.test.js');
 

@@ -12,6 +12,12 @@ export default defineMessages({
     id: `${scope}.license.message`,
     defaultMessage: 'This project is licensed under the MIT license.',
   },
+  copyrightMessage: {
+    id: `${scope}.copyright.message`,
+    defaultMessage: `
+    Copyright 2018, {author}; San Francisco Bay Area.
+    `,
+  },
   authorMessage: {
     id: `${scope}.author.message`,
     defaultMessage: `
