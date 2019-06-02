@@ -60,7 +60,7 @@ class Header extends React.PureComponent {
                             <Button
                                 buttonType="link"
                                 classes="nav-link"
-                                route="/about.html"
+                                route="/about"
                             >
                                 <FormattedMessage {...messages.about} />
                             </Button>
@@ -69,7 +69,7 @@ class Header extends React.PureComponent {
                             <Button
                                 buttonType="link"
                                 classes="nav-link"
-                                route="./projects.html"
+                                route="/projects"
                             >
                                 <FormattedMessage {...messages.projects} />
                             </Button>
@@ -78,7 +78,7 @@ class Header extends React.PureComponent {
                             <Button
                                 buttonType="link"
                                 classes="nav-link"
-                                route="./media.html"
+                                route="/media"
                             >
                                 <FormattedMessage {...messages.media} />
                             </Button>
@@ -87,7 +87,7 @@ class Header extends React.PureComponent {
                             <Button
                                 buttonType="link"
                                 classes="nav-link"
-                                route="./contact.html"
+                                route="/contact"
                             >
                                 <FormattedMessage {...messages.contact} />
                             </Button>

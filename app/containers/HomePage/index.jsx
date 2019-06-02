@@ -4,136 +4,142 @@
  * This is the first thing users see of our App, at the '/' route
  */
 
-import React, { useEffect, memo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
-import { useInjectReducer } from 'utils/injectReducer';
-import { useInjectSaga } from 'utils/injectSaga';
+import './base.scss';
+
 import {
-  makeSelectRepos,
-  makeSelectLoading,
-  makeSelectError,
+    makeSelectRepos,
+    makeSelectLoading,
+    makeSelectError,
 } from 'data-modules/App/selectors';
 import PageHelmet from '../../components/PageHelmet';
-import H2 from 'components/H2';
-import ReposList from 'components/ReposList';
-import AtPrefix from './AtPrefix';
-import CenteredSection from './CenteredSection';
-import Form from './Form';
-import Input from './Input';
-import Section from './Section';
-import messages from './messages';
-import { changeUsername } from './actions';
-import { makeSelectUsername } from './selectors';
-import reducer from './reducer';
-import saga from './saga';
+import MastHead from '../../components/MastHead';
 
-const key = 'home';
+class HomePage extends React.Component {
+    render() {
+        return (
+            <React.Fragment>
+                <PageHelmet
+                    title="Home Page"
+                    metas={[
+                        {
+                            name: 'description',
+                            content:
+                                'A React.js Boilerplate application homepage',
+                        },
+                    ]}
+                />
 
-export function HomePage({
-  username,
-  loading,
-  error,
-  repos,
-  onSubmitForm,
-  onChangeUsername,
-}) {
-  useInjectReducer({ key, reducer });
-  useInjectSaga({ key, saga });
+                <MastHead />
 
-  useEffect(() => {
-    // When initial state username is not null, submit the form to load repos
-    if (username && username.trim().length > 0) onSubmitForm();
-  }, []);
-
-  const reposListProps = {
-    loading,
-    error,
-    repos,
-  };
-
-  return (
-    <React.Fragment>
-      <PageHelmet
-        title="Home Page"
-        metas={[
-          {
-            name: 'description',
-            content: 'A React.js Boilerplate application homepage',
-          },
-        ]}
-      />
-      <div>
-        <CenteredSection>
-          <H2>
-            <FormattedMessage {...messages.startProjectHeader} />
-          </H2>
-          <p>
-            <FormattedMessage {...messages.startProjectMessage} />
-          </p>
-        </CenteredSection>
-        <Section>
-          <H2>
-            <FormattedMessage {...messages.trymeHeader} />
-          </H2>
-          <Form onSubmit={onSubmitForm}>
-            <label htmlFor="username">
-              <FormattedMessage {...messages.trymeMessage} />
-              <AtPrefix>
-                <FormattedMessage {...messages.trymeAtPrefix} />
-              </AtPrefix>
-              <Input
-                id="username"
-                type="text"
-                placeholder="mxstbr"
-                value={username}
-                onChange={onChangeUsername}
-              />
-            </label>
-          </Form>
-          <ReposList {...reposListProps} />
-        </Section>
-      </div>
-    </React.Fragment>
-  );
+                <div className="main main-raised">
+                    <div className="section">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-md-8">
+                                    <h4 className="main-description">
+                                        Independent developer who is passionate
+                                        about learning more about programming
+                                    </h4>
+                                </div>
+                            </div>
+                            <div className="features">
+                                <div className="row">
+                                    <div className="col-md-4 about-me">
+                                        <button className="main-info button-feature button-about">
+                                            <div className="icon icon-about-me">
+                                                <img
+                                                    src="./img/about-me.png"
+                                                    alt="About Me"
+                                                />
+                                            </div>
+                                            <h4 className="icon-title">
+                                                About Me
+                                            </h4>
+                                            <p>
+                                                Puzzle-loving, game-playing, web
+                                                developing girl
+                                            </p>
+                                        </button>
+                                    </div>
+                                    <div className="col-md-4 game-controller">
+                                        <button className="main-info button-feature button-game">
+                                            <div className="icon icon-game-controller">
+                                                <img
+                                                    src="./img/game-controller.png"
+                                                    alt="Projects"
+                                                />
+                                            </div>
+                                            <h4 className="icon-title">
+                                                Game Projects
+                                            </h4>
+                                            <p>
+                                                Games are one of the best ways
+                                                to learn something!
+                                            </p>
+                                        </button>
+                                    </div>
+                                    <div className="col-md-4 media">
+                                        <button className="main-info button-feature button-media">
+                                            <div className="icon icon-media">
+                                                <img
+                                                    src="./img/media.png"
+                                                    alt="Media"
+                                                />
+                                            </div>
+                                            <h4 className="icon-title">
+                                                Media
+                                            </h4>
+                                            <p>
+                                                Past creative projects I
+                                                designed or collaborated in
+                                            </p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </React.Fragment>
+        );
+    }
 }
 
 HomePage.propTypes = {
-  loading: PropTypes.bool,
-  error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
-  onSubmitForm: PropTypes.func,
-  username: PropTypes.string,
-  onChangeUsername: PropTypes.func,
+    loading: PropTypes.bool,
+    error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
+    repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
+    onSubmitForm: PropTypes.func,
+    username: PropTypes.string,
+    onChangeUsername: PropTypes.func,
 };
 
 const mapStateToProps = createStructuredSelector({
-  repos: makeSelectRepos(),
-  username: makeSelectUsername(),
-  loading: makeSelectLoading(),
-  error: makeSelectError(),
+    repos: makeSelectRepos(),
+    loading: makeSelectLoading(),
+    error: makeSelectError(),
 });
 
 export function mapDispatchToProps(dispatch) {
-  return {
-    onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
-    onSubmitForm: evt => {
-      if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-      dispatch(loadRepos());
-    },
-  };
+    return {
+        onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
+        onSubmitForm: evt => {
+            if (evt !== undefined && evt.preventDefault) evt.preventDefault();
+            dispatch(loadRepos());
+        },
+    };
 }
 
 const withConnect = connect(
-  mapStateToProps,
-  mapDispatchToProps,
+    mapStateToProps,
+    mapDispatchToProps
 );
 
-export default compose(
-  withConnect,
-  memo,
-)(HomePage);
+export default compose(withConnect)(HomePage);

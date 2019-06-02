@@ -1,0 +1,14 @@
+.mastHead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+
+    &.homepage-bg {
+        background-image: url('../../images/wall-mural-1.png');
+    }
+
+    &__title {
+        text-align: center;
+    }
+}
