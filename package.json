@@ -2,8 +2,7 @@
   "name": "stephanie-hong",
   "version": "4.0.0",
   "description": "JelloBagel.github.io",
-  "private": true,
-  "homepage": "https://jellobagel.github.io/",
+  "homepage": "https://jellobagel.github.io/JelloBagel.github.io",
   "repository": {
     "type": "git",
     "url": "git://github.com/JelloBagel/JelloBagel.github.io.git"
@@ -44,6 +43,7 @@
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "prettify": "prettier --write",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "browserslist": [
