@@ -31,7 +31,7 @@ class HomePage extends React.Component {
                         {
                             name: 'description',
                             content:
-                                'A React.js Boilerplate application homepage',
+                                'Stephanie Hong: Home Page',
                         },
                     ]}
                 />
@@ -53,12 +53,11 @@ class HomePage extends React.Component {
                                 <div className="row">
                                     <div className="col-md-4 about-me">
                                         <button className="main-info button-feature button-about">
-                                            <div className="icon icon-about-me">
-                                                <img
-                                                    src="./img/about-me.png"
-                                                    alt="About Me"
-                                                />
-                                            </div>
+                                            <img
+                                                className="icon icon-about-me"
+                                                src="./img/about-me.png"
+                                                alt="About Me"
+                                            />
                                             <h4 className="icon-title">
                                                 About Me
                                             </h4>
@@ -70,12 +69,11 @@ class HomePage extends React.Component {
                                     </div>
                                     <div className="col-md-4 game-controller">
                                         <button className="main-info button-feature button-game">
-                                            <div className="icon icon-game-controller">
-                                                <img
-                                                    src="./img/game-controller.png"
-                                                    alt="Projects"
-                                                />
-                                            </div>
+                                            <img
+                                                className="icon icon-game-controller"
+                                                src="./img/game-controller.png"
+                                                alt="Projects"
+                                            />
                                             <h4 className="icon-title">
                                                 Game Projects
                                             </h4>
@@ -87,12 +85,11 @@ class HomePage extends React.Component {
                                     </div>
                                     <div className="col-md-4 media">
                                         <button className="main-info button-feature button-media">
-                                            <div className="icon icon-media">
-                                                <img
-                                                    src="./img/media.png"
-                                                    alt="Media"
-                                                />
-                                            </div>
+                                            <img
+                                                className="icon icon-media"
+                                                src="./img/media.png"
+                                                alt="Media"
+                                            />
                                             <h4 className="icon-title">
                                                 Media
                                             </h4>

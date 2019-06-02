@@ -21,7 +21,7 @@ import {
 import PageHelmet from '../../components/PageHelmet';
 import MastHead from '../../components/MastHead';
 
-class HomePage extends React.Component {
+class AboutPage extends React.Component {
     render() {
         return (
             <React.Fragment>
@@ -31,32 +31,32 @@ class HomePage extends React.Component {
                         {
                             name: 'description',
                             content:
-                                'A React.js Boilerplate application homepage',
+                                'Stephanie Hong: About Page',
                         },
                     ]}
                 />
 
                 <MastHead />
 
-                <div class="main main-raised">
-                    <div class="section">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-4">
+                <div className="main main-raised">
+                    <div className="section">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-md-4">
                                     <img
-                                        class="profile-img"
+                                        className="profile-img"
                                         src="./img/Profile.jpg"
                                         alt="Stephanie Hong"
                                     />
                                 </div>
-                                <div class="col-md-8">
+                                <div className="col-md-8">
                                     <h2>Stephanie Hong</h2>
-                                    <p class="p-about-me">
+                                    <p className="p-about-me">
                                         Graduated in 2018 from University of the
                                         Pacific with a Doctor of Pharmacy and a
                                         Minor in Computer Science.
                                     </p>
-                                    <p class="p-about-me">
+                                    <p className="p-about-me">
                                         As a young girl, I was an avid player of
                                         video games, and over the years, my
                                         interests expanded from playing games to
@@ -73,7 +73,7 @@ class HomePage extends React.Component {
     }
 }
 
-HomePage.propTypes = {
+AboutPage.propTypes = {
     loading: PropTypes.bool,
     error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
     repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
@@ -103,4 +103,4 @@ const withConnect = connect(
     mapDispatchToProps
 );
 
-export default compose(withConnect)(HomePage);
+export default compose(withConnect)(AboutPage);
