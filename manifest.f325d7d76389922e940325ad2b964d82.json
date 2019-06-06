@@ -1,0 +1,10 @@
+{
+  "name": "Stephanie Hong",
+  "short_name": "Stephanie",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": ".",
+  "description": "My React Portfolio Website",
+  "background_color": "#fafafa",
+  "theme_color": "#b1624d"
+}
