@@ -2,10 +2,10 @@
   "name": "stephanie-hong",
   "version": "4.0.0",
   "description": "JelloBagel.github.io",
-  "homepage": "https://jellobagel.github.io/JelloBagel.github.io",
+  "homepage": "https://jellobagel.github.io/portfolio-website",
   "repository": {
     "type": "git",
-    "url": "git://github.com/JelloBagel/JelloBagel.github.io.git"
+    "url": "https://github.com/JelloBagel/portfolio-website.git"
   },
   "engines": {
     "npm": ">=5",
