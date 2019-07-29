@@ -1,0 +1,13 @@
+// Global Styles
+@import "./colors.scss";
+@import "./variables.scss";
+@import "./typography.scss";
+@import "./global.scss";
+
+// Base Component styles
+@import "../components/Footer/base.scss";
+@import "../components/Header/base.scss";
+@import "../components/MastHead/base.scss";
+
+// Container styles
+@import "../containers/HomePage/base.scss";

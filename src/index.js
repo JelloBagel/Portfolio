@@ -6,6 +6,9 @@ import history from "./utils/history";
 
 // Import root app
 import App from "./app/App";
+import "./styles/index.scss";
+
+import { IntlProvider } from "react-intl";
 
 import configureStore from "./configureStore";
 import * as serviceWorker from "./serviceWorker";
@@ -18,9 +21,11 @@ const MOUNT_NODE = document.getElementById("root");
 const render = () => {
   ReactDOM.render(
     <Provider store={store}>
-      <ConnectedRouter history={history}>
-        <App />
-      </ConnectedRouter>
+      <IntlProvider locale="en">
+        <ConnectedRouter history={history}>
+          <App />
+        </ConnectedRouter>
+      </IntlProvider>
     </Provider>,
     MOUNT_NODE
   );

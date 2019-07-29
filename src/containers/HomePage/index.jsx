@@ -1,10 +1,50 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { compose } from "redux";
 
 import PageHelmet from "../../components/PageHelmet";
 import MastHead from "../../components/MastHead";
+import Button from "../../components/Button";
+import Card from "../../components/Card";
+
+import ImageJavascript from "../../images/javascript.png";
+import ImageAboutMe from "../../images/about-me.png";
+import ImageGameController from "../../images/game-controller.png";
+import ImageMedia from "../../images/media.png";
+
+const Content = {
+  HomePage: {
+    mastHead: {
+      backgroundImage: ImageJavascript,
+      title: "Stephanie Hong",
+      subtitle: "Hello World"
+    },
+    description:
+      "Independent developer who is passionate about learning more about programming",
+    cards: [
+      {
+        buttonType: "link",
+        buttonRoute: "/about",
+        title: "About Me",
+        image: { src: ImageAboutMe, alt: "About Me" },
+        content: "Puzzle-loving, game-playing, web developing girl"
+      },
+      {
+        buttonType: "link",
+        buttonRoute: "/projects",
+        title: "Game Projects",
+        image: { src: ImageGameController, alt: "Projects" },
+        content: "Games are how I learn best!"
+      },
+      {
+        buttonType: "link",
+        buttonRoute: "/media",
+        title: "Media",
+        image: { src: ImageMedia, alt: "Media" },
+        content: "Past creative projects I designed or collaborated in"
+      }
+    ]
+  }
+};
 
 function HomePage() {
   return (
@@ -19,57 +59,32 @@ function HomePage() {
         ]}
       />
 
-      <MastHead />
+      <div className="home">
+        <MastHead
+          backgroundImage={Content.HomePage.mastHead.backgroundImage}
+          title={Content.HomePage.mastHead.title}
+          subtitle={Content.HomePage.mastHead.subtitle}
+        />
 
-      <div className="main main-raised">
-        <div className="section">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-8">
-                <h4 className="main-description">
-                  Independent developer who is passionate about learning more
-                  about programming
-                </h4>
-              </div>
-            </div>
-            <div className="features">
-              <div className="row">
-                <div className="col-md-4 about-me">
-                  <button className="main-info button-feature button-about">
-                    <img
-                      className="icon icon-about-me"
-                      src="./img/about-me.png"
-                      alt="About Me"
-                    />
-                    <h4 className="icon-title">About Me</h4>
-                    <p>Puzzle-loving, game-playing, web developing girl</p>
-                  </button>
-                </div>
-                <div className="col-md-4 game-controller">
-                  <button className="main-info button-feature button-game">
-                    <img
-                      className="icon icon-game-controller"
-                      src="./img/game-controller.png"
-                      alt="Projects"
-                    />
-                    <h4 className="icon-title">Game Projects</h4>
-                    <p>Games are one of the best ways to learn something!</p>
-                  </button>
-                </div>
-                <div className="col-md-4 media">
-                  <button className="main-info button-feature button-media">
-                    <img
-                      className="icon icon-media"
-                      src="./img/media.png"
-                      alt="Media"
-                    />
-                    <h4 className="icon-title">Media</h4>
-                    <p>Past creative projects I designed or collaborated in</p>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+        <h4 className="home__description">{Content.HomePage.description}</h4>
+
+        <div className="home__cards">
+          {Content.HomePage.cards
+            ? Content.HomePage.cards.map(card => (
+                <Button
+                  buttonType={card.buttonType}
+                  classes="home__cards__card"
+                  route={card.buttonRoute}
+                  key={card.buttonRoute}
+                >
+                  <Card
+                    title={card.title}
+                    image={card.image}
+                    content={card.content}
+                  />
+                </Button>
+              ))
+            : null}
         </div>
       </div>
     </React.Fragment>
@@ -84,18 +99,5 @@ HomePage.propTypes = {
   username: PropTypes.string,
   onChangeUsername: PropTypes.func
 };
-
-// const mapStateToProps = {
-
-// };
-
-// export function mapDispatchToProps(dispatch) {
-//   return {};
-// }
-
-// const withConnect = connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// );
 
 export default HomePage;

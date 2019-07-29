@@ -1,0 +1,38 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Raleway", Helvetica, Arial, sans-serif;
+  background-color: $color-mainTheme;
+  line-height: 1.5em;
+  text-align: left;
+  margin: 0;
+}
+
+a,
+button {
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+
+  &:hover {
+    font-weight: 700;
+  }
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+.App {
+  background-color: $color-pageBackground;
+}

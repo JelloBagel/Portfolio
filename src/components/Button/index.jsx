@@ -5,78 +5,74 @@
  * A common button, if you pass it a prop "route" it'll render a link based on button type
  */
 
-import React, { Children } from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-class Button extends React.PureComponent {
-    renderAnchorTag() {
-        const { route, handleRoute } = this.props;
-
-        if (handleRoute) {
-            return (
-                <a href={route} onClick={handleRoute} target="_blank">
-                    {this.renderContent()}
-                </a>
-            );
-        }
-        return (
-            <a href={route} target="_blank">
-                {this.renderContent()}
-            </a>
-        );
+function Button({ route, handleRoute, buttonType, classes, children }) {
+  const renderAnchorTag = () => {
+    if (handleRoute) {
+      return (
+        <a
+          href={route}
+          onClick={handleRoute}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {renderContent()}
+        </a>
+      );
     }
+    return (
+      <a href={route} target="_blank" rel="noopener noreferrer">
+        {renderContent()}
+      </a>
+    );
+  };
 
-    renderLink() {
-        const { route, handleRoute } = this.props;
-
-        if (handleRoute) {
-            return (
-                <Link to={route} onClick={handleRoute}>
-                    {this.renderContent()}
-                </Link>
-            );
-        }
-        return <Link to={route}>{this.renderContent()}</Link>;
+  const renderLink = () => {
+    if (handleRoute) {
+      return (
+        <Link to={route} onClick={handleRoute}>
+          {renderContent()}
+        </Link>
+      );
     }
+    return <Link to={route}>{renderContent()}</Link>;
+  };
 
-    renderHandleRoute() {
-        const { handleRoute } = this.props;
-        return <div onClick={handleRoute}>{this.renderContent()}</div>;
-    }
+  const renderOnClick = () => {
+    return <div onClick={handleRoute}>{renderContent()}</div>;
+  };
 
-    renderContent() {
-        const { children } = this.props;
-        return children;
-    }
+  const renderContent = () => {
+    return children;
+  };
 
-    render() {
-        const { buttonType, classes } = this.props;
-        let button = null;
+  let button = null;
 
-        switch (buttonType) {
-            case 'anchor':
-                button = this.renderAnchorTag();
-                break;
-            case 'link':
-                button = this.renderLink();
-                break;
-            case 'handleRoute':
-                button = this.renderHandleRoute();
-                break;
-            default:
-                button = 'No Button Type';
-                break;
-        }
-        return <button className={classes}>{button}</button>;
-    }
+  switch (buttonType) {
+    case "anchor":
+      button = renderAnchorTag();
+      break;
+    case "link":
+      button = renderLink();
+      break;
+    case "onClick":
+      button = renderOnClick();
+      break;
+    default:
+      button = "No Button Type";
+      break;
+  }
+  return <button className={classes}>{button}</button>;
 }
 
 Button.propTypes = {
-    buttonType: PropTypes.string,
-    classes: PropTypes.string,
-    handleRoute: PropTypes.func,
-    route: PropTypes.string,
+  buttonType: PropTypes.string,
+  classes: PropTypes.string,
+  handleRoute: PropTypes.func,
+  route: PropTypes.string
 };
 
 export default Button;

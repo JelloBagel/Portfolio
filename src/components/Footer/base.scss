@@ -1,27 +1,27 @@
 .footer {
-    background-color: #00cdd1;
+  align-items: center;
+  background-color: $color-mainTheme;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30px;
+  padding: 10px 0;
+  text-align: center;
+
+  button {
+    background: none;
+    border: none;
+  }
+
+  img {
+    width: 52px;
+  }
+
+  a {
     color: white;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 30px;
+  }
 
-    button {
-        background: none;
-        border: none;
-    }
-
-    img {
-        width: 52px;
-    }
-
-    a {
-        color: white;
-    }
-
-    a:hover {
-        border-bottom: 2px solid white;
-    }
+  a:hover {
+    border-bottom: 2px solid white;
+  }
 }

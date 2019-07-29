@@ -1,0 +1,31 @@
+.home {
+  padding-top: $navHeight;
+
+  &__description {
+    font-size: 20px;
+    color: #999;
+    text-align: center;
+    line-height: 1.4em;
+    font-weight: 600;
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+
+    &__card {
+      max-width: 360px;
+
+      img {
+        width: 75px;
+      }
+
+      .card__title {
+        font-size: 16px;
+        line-height: 1.5em;
+      }
+    }
+  }
+}
