@@ -8,7 +8,6 @@ html {
 }
 
 body {
-  font-family: "Raleway", Helvetica, Arial, sans-serif;
   background-color: $color-mainTheme;
   line-height: 1.5em;
   text-align: left;
@@ -22,6 +21,7 @@ button {
   cursor: pointer;
   border: none;
   text-decoration: none;
+  outline: none;
 
   &:hover {
     font-weight: 700;

@@ -1,0 +1,13 @@
+$font-sans: "Century Gothic", "AppleGothic", sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Lato:700,700i,900,900i&display=swap');
+
+@mixin font-rendering {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin font-sanN4 {
+  font-family: "Lato", $font-sans;
+  font-weight: 400;
+  @include font-rendering;
+}

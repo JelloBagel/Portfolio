@@ -11,7 +11,7 @@ import ImageAboutMe from "../../images/about-me.png";
 import ImageGameController from "../../images/game-controller.png";
 import ImageMedia from "../../images/media.png";
 
-const Content = {
+const CONTENT = {
   HomePage: {
     mastHead: {
       backgroundImage: ImageJavascript,
@@ -61,16 +61,16 @@ function HomePage() {
 
       <div className="home">
         <MastHead
-          backgroundImage={Content.HomePage.mastHead.backgroundImage}
-          title={Content.HomePage.mastHead.title}
-          subtitle={Content.HomePage.mastHead.subtitle}
+          backgroundImage={CONTENT.HomePage.mastHead.backgroundImage}
+          title={CONTENT.HomePage.mastHead.title}
+          subtitle={CONTENT.HomePage.mastHead.subtitle}
         />
 
-        <h4 className="home__description">{Content.HomePage.description}</h4>
+        <h4 className="home__description">{CONTENT.HomePage.description}</h4>
 
         <div className="home__cards">
-          {Content.HomePage.cards
-            ? Content.HomePage.cards.map(card => (
+          {CONTENT.HomePage.cards
+            ? CONTENT.HomePage.cards.map(card => (
                 <Button
                   buttonType={card.buttonType}
                   classes="home__cards__card"

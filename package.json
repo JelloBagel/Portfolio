@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://JelloBagel.github.io/portfolio-website",
   "dependencies": {
+    "classnames": "^2.2.6",
     "connected-react-router": "^6.5.2",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",

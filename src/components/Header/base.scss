@@ -1,107 +1,213 @@
 .navigation {
-  background-color: #fff;
-  background: linear-gradient(rgba(0, 0, 0, 0.425), rgba(0, 0, 0, 0));
-  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.12),
-    0 7px 10px -5px rgba(0, 0, 0, 0.15);
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  height: $navHeight;
-  margin-bottom: 20px;
-  padding: 0.625rem 0;
+  @include font-sanN4;
+  color: $color-navText;
+  height: 100%;
+  padding-top: 70px;
 
-  &--fixed {
-    position: fixed;
-    right: 0;
+  &.is-docked {
+    padding: 0;
     left: 0;
-    z-index: 1030;
-  }
-
-  &__brand {
-    display: inline-block;
-    font-size: 12px;
-    height: 50px;
-    line-height: 30px;
-    margin-right: 1rem;
-    padding: 0.625rem 0;
-    text-align: center;
-    white-space: nowrap;
-  }
-
-  &__main {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding-left: 0;
-
-    &__btn {
-      display: block;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 20px;
-      padding: 0.9375rem;
-      position: relative;
-    }
-
-    a.pdf {
-      background: transparent url("../images/pdf.png") center right no-repeat;
-      padding-right: 23px;
-    }
-  }
-}
-
-.navbar-collapse {
-  transform: translate3d(0, 0, 0);
-}
-
-/*testing hamburger function*/
-@media (min-width: 776px) {
-  .navbar-toggler {
-    display: none;
-  }
-}
-
-@media (max-width: 776px) {
-  .nav-hamburger-img {
-    height: 35px;
-  }
-  .navbar-toggler {
-    background-color: transparent;
-    border-style: none;
-  }
-  .navbar-collapse {
     position: fixed;
-    display: block;
-    top: 0;
-    height: 100vh;
-    width: 230px;
     right: 0;
-    margin-right: 0;
-    z-index: 1032;
-    visibility: visible;
-    background-color: #fdfdfd;
-    color: #555;
-    overflow-y: visible;
-    border-top: none;
-    text-align: left;
-    padding-right: 0;
-    padding-left: 0;
-    -webkit-transform: translate3d(230px, 0, 0);
-    transform: translate3d(
-      230px,
-      0,
-      0
-    ); /*should change when toggling hamburger button*/
-    transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    z-index: 1000;
+
+    .navigation__container {
+      margin: 0;
+      width: 100%;
+    }
   }
-  .navbar-translate {
-    width: 100%;
+
+  &__container {
+    background-color: $color-navBg;
     display: flex;
+    height: $navHeight;
     justify-content: space-between;
-    align-items: center;
-    transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    margin: 0 auto;
+    width: fit-content;
+    min-width: 768px;
+
+    &__hamburger--mobile,
+    .brand__img--mobile,
+    .brand__btn--mobile,
+    &__overlay--mobile {
+      display: none;
+    }
+
+    &__brand .brand__btn,
+    &__main .navigation__container__main__btn {
+      display: block;
+      font-size: 16px;
+      height: 100%;
+      padding: 1rem;
+      position: relative;
+      @include font-sanN4;
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: $color-navHover;
+        -webkit-transition: height 0.2s;
+        transition: height 0.2s;
+      }
+
+      &:hover {
+        color: $color-navHover;
+        &:after {
+          height: 3px;
+        }
+      }
+    }
+
+    &__brand {
+      display: flex;
+      text-align: center;
+
+      img {
+        height: $navHeight;
+      }
+    }
+
+    &__main {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-left: 0;
+
+      a.pdf {
+        background: transparent url("../images/pdf.png") center right no-repeat;
+        padding-right: 23px;
+      }
+
+      &__back--mobile {
+        display: none;
+      }
+    }
+  }
+}
+
+// Mobile styles (<768px)
+.navigation.is-mobile {
+  .navigation__container {
+    min-width: unset;
+
+    &__hamburger--mobile {
+      display: block;
+
+      svg {
+        height: 48px;
+        fill: $color-hamburger;
+      }
+    }
+
+    &__main {
+      align-items: flex-start;
+      background: $color-navBgMobile;
+      bottom: 0;
+      display: block;
+      flex-direction: column;
+      height: auto;
+      justify-content: flex-start;
+      left: 0;
+      margin: 0;
+      max-width: 360px;
+      min-height: 100%;
+      opacity: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      overflow: hidden;
+      padding: 0;
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      transition: max-height 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+      white-space: normal;
+      width: 100%;
+
+      // Back or X button
+      &__back--mobile {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        width: 100%;
+
+        svg {
+          fill: $color-navTextMobile;
+          top: 5px;
+          right: 5px;
+          bottom: 5px;
+          left: 5px;
+          width: 24px;
+          height: 24px;
+          margin: 10px;
+        }
+      }
+
+      // Brand logo
+      // .brand__btn--mobile,
+      .brand__img--mobile {
+        display: block;
+        margin: 0 auto 10px;
+      }
+
+      // Navigation items
+      &__btn {
+        color: $color-navTextMobile;
+        height: auto;
+        width: 100%;
+        text-align: left;
+        padding-left: 30px;
+
+        &:hover {
+          color: $color-navHover;
+          &:after {
+            height: 0;
+          }
+        }
+
+        &:before {
+          background-color: #e5e3dc;
+          content: "";
+          height: 1px;
+          left: 0;
+          opacity: 0.2;
+          position: absolute;
+          top: 0;
+          width: 100%;
+        }
+      }
+
+      &.mobile-is-open {
+        opacity: 1;
+        pointer-events: all;
+        width: 100%;
+        transition: max-height 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+          opacity 0.4s ease-in-out;
+        z-index: 900;
+
+        .navigation__container__main__back--mobile {
+          align-items: flex-end;
+          display: flex;
+          justify-content: flex-start;
+          position: relative;
+        }
+
+        + .navigation__container__overlay--mobile {
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          display: block;
+        }
+      }
+    }
   }
 }
