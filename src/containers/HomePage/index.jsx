@@ -10,6 +10,7 @@ import ImageJavascript from "../../images/javascript.png";
 import ImageAboutMe from "../../images/about-me.png";
 import ImageGameController from "../../images/game-controller.png";
 import ImageMedia from "../../images/media.png";
+import ImageHighlightBg from "../../images/highlight-bg.png";
 
 const CONTENT = {
   HomePage: {
@@ -20,6 +21,9 @@ const CONTENT = {
     },
     description:
       "Independent developer who is passionate about learning more about programming",
+    overlapLeftImage: { src: ImageHighlightBg, alt: "highlight bg" },
+    overlapRightImage: { src: ImageHighlightBg, alt: "highlight bg" },
+    cardTitle: "Highlights",
     cards: [
       {
         buttonType: "link",
@@ -68,23 +72,34 @@ function HomePage() {
 
         <h4 className="home__description">{CONTENT.HomePage.description}</h4>
 
-        <div className="home__cards">
-          {CONTENT.HomePage.cards
-            ? CONTENT.HomePage.cards.map(card => (
-                <Button
-                  buttonType={card.buttonType}
-                  classes="home__cards__card"
-                  route={card.buttonRoute}
-                  key={card.buttonRoute}
-                >
-                  <Card
-                    title={card.title}
-                    image={card.image}
-                    content={card.content}
-                  />
-                </Button>
-              ))
-            : null}
+        
+        <div className="home__cards" style={{ backgroundImage: `url(${ImageHighlightBg})` }}>
+          {/* <img
+            className="home__cards__bg"
+            src={ImageHighlightBg}
+            alt="highlight bg"
+          /> */}
+          <div className="home__cards__container">
+            <h1 className="home__cards__container__title">
+              {CONTENT.HomePage.cardTitle}
+            </h1>
+            {CONTENT.HomePage.cards
+              ? CONTENT.HomePage.cards.map(card => (
+                  <Button
+                    buttonType={card.buttonType}
+                    classes="home__cards__container__card"
+                    route={card.buttonRoute}
+                    key={card.buttonRoute}
+                  >
+                    <Card
+                      title={card.title}
+                      image={card.image}
+                      content={card.content}
+                    />
+                  </Button>
+                ))
+              : null}
+          </div>
         </div>
       </div>
     </React.Fragment>
