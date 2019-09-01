@@ -1,5 +1,5 @@
 $font-sans: "Century Gothic", "AppleGothic", sans-serif;
-@import url('https://fonts.googleapis.com/css?family=Lato:700,700i,900,900i&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Lato:700,700i,900,900i&display=swap");
 
 @mixin font-rendering {
   -webkit-font-smoothing: antialiased;
@@ -9,5 +9,25 @@ $font-sans: "Century Gothic", "AppleGothic", sans-serif;
 @mixin font-sanN4 {
   font-family: "Lato", $font-sans;
   font-weight: 400;
+  @include font-rendering;
+}
+
+@mixin font-sanN7 {
+  font-family: "Lato", $font-sans;
+  font-weight: 700;
+  @include font-rendering;
+}
+
+@mixin font-sanN7I {
+  font-family: "Lato", $font-sans;
+  font-weight: 700;
+  font-style: italic;
+  @include font-rendering;
+}
+
+@mixin font-sanN9I {
+  font-family: "Lato", $font-sans;
+  font-weight: 900;
+  font-style: italic;
   @include font-rendering;
 }

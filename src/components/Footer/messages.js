@@ -3,25 +3,17 @@
  *
  * This contains all the text for the Footer component.
  */
-import { defineMessages } from 'react-intl';
+import { defineMessages } from "react-intl";
 
-export const scope = 'boilerplate.components.Footer';
+export const scope = "boilerplate.components.Footer";
 
 export default defineMessages({
-  licenseMessage: {
-    id: `${scope}.license.message`,
-    defaultMessage: 'This project is licensed under the MIT license.',
-  },
   copyrightMessage: {
     id: `${scope}.copyright.message`,
-    defaultMessage: `
-    Copyright 2018, {author}; San Francisco Bay Area.
-    `,
+    defaultMessage: `©2018 {author}, San Francisco Bay Area.`
   },
-  authorMessage: {
-    id: `${scope}.author.message`,
-    defaultMessage: `
-      Made with love by {author}.
-    `,
-  },
+  socialMessage: {
+    id: `${scope}.social.message`,
+    defaultMessage: `STAY CONNECTED`
+  }
 });

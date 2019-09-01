@@ -1,1 +1,20 @@
 $navHeight: 50px;
+
+@mixin mq-phone {
+    @media (max-width: 640px) { @content; }
+  }
+  @mixin mq-tablet {
+    @media (max-width: 768px) { @content; }
+  }
+  @mixin mq-tablet-wide {
+    @media (max-width: 900px) { @content; }
+  }
+  @mixin mq-desktop-small {
+    @media (max-width: 1080px) { @content; }
+  }
+  @mixin mq-desktop {
+    @media (max-width: 1200px) { @content; }
+  }
+  @mixin mq-desktop-wide {
+    @media (max-width: 1800px) { @content; }
+  }

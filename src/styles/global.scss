@@ -8,8 +8,7 @@ html {
 }
 
 body {
-  background-color: $color-mainTheme;
-  line-height: 1.5em;
+  background-color: $color-footerBg;
   text-align: left;
   margin: 0;
 }
@@ -22,10 +21,6 @@ button {
   border: none;
   text-decoration: none;
   outline: none;
-
-  &:hover {
-    font-weight: 700;
-  }
 }
 
 img {
