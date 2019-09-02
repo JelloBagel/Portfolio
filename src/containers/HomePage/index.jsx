@@ -3,48 +3,55 @@ import PropTypes from "prop-types";
 
 import PageHelmet from "../../components/PageHelmet";
 import MastHead from "../../components/MastHead";
-import Button from "../../components/Button";
 import Card from "../../components/Card";
 
-import ImageJavascript from "../../images/javascript.png";
-import ImageAboutMe from "../../images/about-me.png";
-import ImageGameController from "../../images/game-controller.png";
-import ImageMedia from "../../images/media.png";
-import ImageHighlightBg from "../../images/highlight-bg.png";
+import ImageOvercooked from "../../images/overcooked.png";
+import ImageHighlightBg from "../../images/highlight-bg-chars.png";
+import ImageDogs from "../../images/photoshop/puppy-rumble.png";
 
 const CONTENT = {
   HomePage: {
     mastHead: {
-      backgroundImage: ImageJavascript,
+      backgroundImage: ImageOvercooked,
       title: "Stephanie Hong",
-      subtitle: "Hello World"
+      // subtitle: "Hello World"
     },
     description:
       "Independent developer who is passionate about learning more about programming",
-    overlapLeftImage: { src: ImageHighlightBg, alt: "highlight bg" },
-    overlapRightImage: { src: ImageHighlightBg, alt: "highlight bg" },
     cardTitle: "Highlights",
     cards: [
       {
-        buttonType: "link",
-        buttonRoute: "/about",
-        title: "About Me",
-        image: { src: ImageAboutMe, alt: "About Me" },
-        content: "Puzzle-loving, game-playing, web developing girl"
+        button: {
+          buttonType: "link",
+          buttonRoute: "/about"
+        },
+        content: {
+          title: "About Me",
+          image: { src: ImageDogs, alt: "About Me" },
+          content: "Puzzle-loving, game-playing, web developing girl"
+        }
       },
       {
-        buttonType: "link",
-        buttonRoute: "/projects",
-        title: "Game Projects",
-        image: { src: ImageGameController, alt: "Projects" },
-        content: "Games are how I learn best!"
+        button: {
+          buttonType: "link",
+          buttonRoute: "/projects"
+        },
+        content: {
+          image: { src: ImageDogs, alt: "Game Projects" },
+          title: "Game Projects",
+          content: "Games are how I learn best!"
+        }
       },
       {
-        buttonType: "link",
-        buttonRoute: "/media",
-        title: "Media",
-        image: { src: ImageMedia, alt: "Media" },
-        content: "Past creative projects I designed or collaborated in"
+        button: {
+          buttonType: "link",
+          buttonRoute: "/media"
+        },
+        content: {
+          title: "Media",
+          image: { src: ImageDogs, alt: "Media" },
+          content: "Past creative projects"
+        }
       }
     ]
   }
@@ -72,31 +79,21 @@ function HomePage() {
 
         <h4 className="home__description">{CONTENT.HomePage.description}</h4>
 
-        
-        <div className="home__cards" style={{ backgroundImage: `url(${ImageHighlightBg})` }}>
-          {/* <img
-            className="home__cards__bg"
-            src={ImageHighlightBg}
-            alt="highlight bg"
-          /> */}
+        <div
+          className="home__cards"
+          style={{ backgroundImage: `url(${ImageHighlightBg})` }}
+        >
           <div className="home__cards__container">
             <h1 className="home__cards__container__title">
               {CONTENT.HomePage.cardTitle}
             </h1>
             {CONTENT.HomePage.cards
               ? CONTENT.HomePage.cards.map(card => (
-                  <Button
-                    buttonType={card.buttonType}
-                    classes="home__cards__container__card"
-                    route={card.buttonRoute}
-                    key={card.buttonRoute}
-                  >
-                    <Card
-                      title={card.title}
-                      image={card.image}
-                      content={card.content}
-                    />
-                  </Button>
+                  <Card
+                    content={card.content}
+                    button={card.button}
+                    key={card.content.title}
+                  />
                 ))
               : null}
           </div>

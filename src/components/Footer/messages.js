@@ -10,7 +10,7 @@ export const scope = "boilerplate.components.Footer";
 export default defineMessages({
   copyrightMessage: {
     id: `${scope}.copyright.message`,
-    defaultMessage: `©2018 {author}, San Francisco Bay Area.`
+    defaultMessage: `2019, {author}, San Francisco Bay Area.`
   },
   socialMessage: {
     id: `${scope}.social.message`,

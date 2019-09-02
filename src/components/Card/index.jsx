@@ -1,19 +1,41 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Button from "../Button";
 
-function Card({ title, image, content }) {
+function Card({ button, content }) {
   return (
-    <React.Fragment>
-      <img className="card__img" src={image.src} alt={image.alt} />
-      <h4 className="card__title">{title}</h4>
-      <p className="card__content">{content}</p>
-    </React.Fragment>
+    <div
+      className="card"
+      style={{ backgroundImage: `url(${content.backgroundImage})` }}
+    >
+      <Button
+        buttonType={button.buttonType}
+        classes="card__container"
+        route={button.buttonRoute}
+        key={button.buttonRoute}
+      >
+        {content.image ? (
+          <img
+            className="card__container__img"
+            src={content.image.src}
+            alt={content.image.alt}
+          />
+        ) : null}
+        <div className="card__container__text">
+          {content.title ? (
+            <h4 className="card__container__text__title">{content.title}</h4>
+          ) : null}
+          {content.content ? (
+            <p className="card__container__text__content">{content.content}</p>
+          ) : null}
+        </div>
+      </Button>
+    </div>
   );
 }
 
 Card.propTypes = {
-  title: PropTypes.string,
-  image: PropTypes.object,
-  content: PropTypes.string
+  button: PropTypes.object,
+  content: PropTypes.object
 };
 export default Card;

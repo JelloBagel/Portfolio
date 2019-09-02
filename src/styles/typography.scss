@@ -18,6 +18,12 @@ $font-sans: "Century Gothic", "AppleGothic", sans-serif;
   @include font-rendering;
 }
 
+@mixin font-sanN9 {
+  font-family: "Lato", $font-sans;
+  font-weight: 900;
+  @include font-rendering;
+}
+
 @mixin font-sanN7I {
   font-family: "Lato", $font-sans;
   font-weight: 700;
