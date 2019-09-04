@@ -31,3 +31,13 @@ img {
 .App {
   background-color: $color-pageBackground;
 }
+
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 2900ms ease-in;
+}

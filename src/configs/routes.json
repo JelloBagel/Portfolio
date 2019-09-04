@@ -1,6 +1,5 @@
 {
   "HomePage": "/",
   "AboutPage": "/about",
-  "ProjectPage": "/project",
-  "MediaPage": "/media"
+  "ProjectPage": "/project"
 }

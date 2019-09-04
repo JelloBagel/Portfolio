@@ -1,28 +1,42 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom";
 
-import loadable from "./Loadable";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+import HomePage from "../containers/HomePage";
+import AboutPage from "../containers/AboutPage";
+
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Router>
-        <Switch>
-          <Route
-            path={process.env.PUBLIC_URL + "/"}
-            exact
-            component={loadable("HomePage")}
-          />
-          {/* <Route path="/about" component={loadable("AboutPage")} /> */}
-          {/* <Route path="/features" component={loadable("FeaturePage")} /> */}
-          {/* <Route component={loadable("NotFoundPage")} /> */}
-        </Switch>
-      </Router>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Route
+        render={({ location }) => (
+          <React.Fragment>
+            <Header />
+            <TransitionGroup>
+              <CSSTransition
+                key={location.key}
+                classNames="fade"
+                timeout={3000}
+                appear
+              >
+                <Switch location={location}>
+                  <Route exact path="/" component={HomePage} />
+                  <Route
+                    path={process.env.PUBLIC_URL + "/about"}
+                    component={AboutPage}
+                  />
+                  <Route render={() => <div>Not Found</div>} />
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+            <Footer />
+          </React.Fragment>
+        )}
+      />
+    </BrowserRouter>
   );
 }
 
