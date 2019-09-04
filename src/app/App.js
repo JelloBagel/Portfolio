@@ -1,12 +1,14 @@
 import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 import HomePage from "../containers/HomePage";
 import AboutPage from "../containers/AboutPage";
+import ProjectPage from "../containers/ProjectPage";
+import NotFoundPage from "../containers/NotFoundPage";
 
 function App() {
   return (
@@ -32,7 +34,12 @@ function App() {
                     path={process.env.PUBLIC_URL + "/about"}
                     component={AboutPage}
                   />
-                  <Route render={() => <div>Not Found</div>} />
+                  <Route
+                    path={process.env.PUBLIC_URL + "/projects"}
+                    component={ProjectPage}
+                  />
+                  <Route path="/404" component={NotFoundPage} />
+                  <Route path="*" component={() => <Redirect to="/404" />} />
                 </Switch>
               </CSSTransition>
             </TransitionGroup>

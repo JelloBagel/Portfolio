@@ -45,6 +45,7 @@ function Button({ route, handleRoute, buttonType, classes, children }) {
     return <div onClick={handleRoute}>{renderContent()}</div>;
   };
 
+  //TODO add modal
   const renderContent = () => {
     return children;
   };
