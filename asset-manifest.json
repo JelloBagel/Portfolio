@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.69b8dcba.chunk.css",
-    "main.js": "/static/js/main.0ca6cbad.chunk.js",
-    "main.js.map": "/static/js/main.0ca6cbad.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.937d2398.chunk.js": "/static/js/2.937d2398.chunk.js",
-    "static/js/2.937d2398.chunk.js.map": "/static/js/2.937d2398.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.91ea88fc391cea7bd0bceb4c0f562a22.js": "/precache-manifest.91ea88fc391cea7bd0bceb4c0f562a22.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.69b8dcba.chunk.css.map": "/static/css/main.69b8dcba.chunk.css.map",
-    "static/media/highlight-bg-chars.png": "/static/media/highlight-bg-chars.ba8534bb.png",
-    "static/media/overcooked.png": "/static/media/overcooked.d628d14c.png",
-    "static/media/pachimaru.png": "/static/media/pachimaru.ff44b1b0.png",
-    "static/media/puppy-rumble.png": "/static/media/puppy-rumble.9aa57fba.png"
+    "main.css": "/site/static/css/main.feb77852.chunk.css",
+    "main.js": "/site/static/js/main.25d09cf2.chunk.js",
+    "main.js.map": "/site/static/js/main.25d09cf2.chunk.js.map",
+    "runtime~main.js": "/site/static/js/runtime~main.de27f395.js",
+    "runtime~main.js.map": "/site/static/js/runtime~main.de27f395.js.map",
+    "static/js/2.937d2398.chunk.js": "/site/static/js/2.937d2398.chunk.js",
+    "static/js/2.937d2398.chunk.js.map": "/site/static/js/2.937d2398.chunk.js.map",
+    "index.html": "/site/index.html",
+    "precache-manifest.4a81315586d93d77dba2374668d7dbf6.js": "/site/precache-manifest.4a81315586d93d77dba2374668d7dbf6.js",
+    "service-worker.js": "/site/service-worker.js",
+    "static/css/main.feb77852.chunk.css.map": "/site/static/css/main.feb77852.chunk.css.map",
+    "static/media/highlight-bg-chars.png": "/site/static/media/highlight-bg-chars.ba8534bb.png",
+    "static/media/overcooked.png": "/site/static/media/overcooked.d628d14c.png",
+    "static/media/pachimaru.png": "/site/static/media/pachimaru.ff44b1b0.png",
+    "static/media/puppy-rumble.png": "/site/static/media/puppy-rumble.9aa57fba.png"
   }
 }
