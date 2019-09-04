@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://JelloBagel.github.io/",
+  "homepage": "http://JelloBagel.github.io/site",
   "dependencies": {
     "classnames": "^2.2.6",
     "connected-react-router": "^6.5.2",

@@ -23,7 +23,11 @@ function App() {
                 appear
               >
                 <Switch location={location}>
-                  <Route exact path="/" component={HomePage} />
+                  <Route
+                    exact
+                    path={process.env.PUBLIC_URL + "/"}
+                    component={HomePage}
+                  />
                   <Route
                     path={process.env.PUBLIC_URL + "/about"}
                     component={AboutPage}
