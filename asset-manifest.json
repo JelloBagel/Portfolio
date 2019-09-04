@@ -1,23 +1,19 @@
 {
   "files": {
-    "main.css": "/portfolio-website/static/css/main.08e50d30.chunk.css",
-    "main.js": "/portfolio-website/static/js/main.705f8294.chunk.js",
-    "main.js.map": "/portfolio-website/static/js/main.705f8294.chunk.js.map",
-    "runtime~main.js": "/portfolio-website/static/js/runtime~main.79003556.js",
-    "runtime~main.js.map": "/portfolio-website/static/js/runtime~main.79003556.js.map",
-    "static/js/2.8a34b9ac.chunk.js": "/portfolio-website/static/js/2.8a34b9ac.chunk.js",
-    "static/js/2.8a34b9ac.chunk.js.map": "/portfolio-website/static/js/2.8a34b9ac.chunk.js.map",
-    "static/js/3.333b4ba0.chunk.js": "/portfolio-website/static/js/3.333b4ba0.chunk.js",
-    "static/js/3.333b4ba0.chunk.js.map": "/portfolio-website/static/js/3.333b4ba0.chunk.js.map",
-    "static/js/4.c02c8533.chunk.js": "/portfolio-website/static/js/4.c02c8533.chunk.js",
-    "static/js/4.c02c8533.chunk.js.map": "/portfolio-website/static/js/4.c02c8533.chunk.js.map",
-    "index.html": "/portfolio-website/index.html",
-    "precache-manifest.f10c99f17203c4b11039f4d7f2558620.js": "/portfolio-website/precache-manifest.f10c99f17203c4b11039f4d7f2558620.js",
-    "service-worker.js": "/portfolio-website/service-worker.js",
-    "static/css/main.08e50d30.chunk.css.map": "/portfolio-website/static/css/main.08e50d30.chunk.css.map",
-    "static/media/highlight-bg-chars.png": "/portfolio-website/static/media/highlight-bg-chars.ba8534bb.png",
-    "static/media/overcooked.png": "/portfolio-website/static/media/overcooked.d628d14c.png",
-    "static/media/pachimaru.png": "/portfolio-website/static/media/pachimaru.ff44b1b0.png",
-    "static/media/puppy-rumble.png": "/portfolio-website/static/media/puppy-rumble.9aa57fba.png"
+    "main.css": "/static/css/main.69b8dcba.chunk.css",
+    "main.js": "/static/js/main.0ca6cbad.chunk.js",
+    "main.js.map": "/static/js/main.0ca6cbad.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.937d2398.chunk.js": "/static/js/2.937d2398.chunk.js",
+    "static/js/2.937d2398.chunk.js.map": "/static/js/2.937d2398.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.91ea88fc391cea7bd0bceb4c0f562a22.js": "/precache-manifest.91ea88fc391cea7bd0bceb4c0f562a22.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.69b8dcba.chunk.css.map": "/static/css/main.69b8dcba.chunk.css.map",
+    "static/media/highlight-bg-chars.png": "/static/media/highlight-bg-chars.ba8534bb.png",
+    "static/media/overcooked.png": "/static/media/overcooked.d628d14c.png",
+    "static/media/pachimaru.png": "/static/media/pachimaru.ff44b1b0.png",
+    "static/media/puppy-rumble.png": "/static/media/puppy-rumble.9aa57fba.png"
   }
 }
