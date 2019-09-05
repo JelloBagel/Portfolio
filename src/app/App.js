@@ -12,7 +12,7 @@ import NotFoundPage from "../containers/NotFoundPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Route
         render={({ location }) => (
           <React.Fragment>
