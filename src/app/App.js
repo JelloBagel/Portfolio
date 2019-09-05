@@ -25,19 +25,9 @@ function App() {
                 appear
               >
                 <Switch location={location}>
-                  <Route
-                    exact
-                    path={process.env.PUBLIC_URL + "/"}
-                    component={HomePage}
-                  />
-                  <Route
-                    path={process.env.PUBLIC_URL + "/about"}
-                    component={AboutPage}
-                  />
-                  <Route
-                    path={process.env.PUBLIC_URL + "/projects"}
-                    component={ProjectPage}
-                  />
+                  <Route exact path={"/"} component={HomePage} />
+                  <Route path={"/about"} component={AboutPage} />
+                  <Route path={"/projects"} component={ProjectPage} />
                   <Route path="/404" component={NotFoundPage} />
                   <Route path="*" component={() => <Redirect to="/404" />} />
                 </Switch>
