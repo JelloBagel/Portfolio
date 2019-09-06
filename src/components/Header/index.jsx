@@ -89,13 +89,13 @@ function Header() {
             <IconX />
           </Button>
           {renderBrand("mobile")}
-          <Button
+          {/* <Button
             buttonType="anchor"
             classes="navigation__container__main__btn"
             route="/Hong_Stephanie_Resume_S.pdf"
           >
             <FormattedMessage {...messages.resume} />
-          </Button>
+          </Button> */}
           <Button
             buttonType="link"
             classes="navigation__container__main__btn"

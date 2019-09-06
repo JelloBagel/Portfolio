@@ -25,3 +25,10 @@ It correctly bundles React in production mode and optimizes the build for the be
 ### `npm run deploy`
 
 Builds the app for production to Github.<br>
+
+## Steps:
+- Created using create-react-app
+- Initial react routing solved by: https://github.com/facebook/create-react-app/issues/1765
+- Page reload routing solved by: https://github.com/rafrex/spa-github-pages
+- Implemented react-transition-group on routing solved by: https://medium.com/lalilo/dynamic-transitions-with-react-router-and-react-transition-group-69ab795815c9 (simple example: https://reacttraining.com/react-router/web/example/animated-transitions)
+- 
