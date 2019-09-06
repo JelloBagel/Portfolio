@@ -31,4 +31,6 @@ Builds the app for production to Github.<br>
 - Initial react routing solved by: https://github.com/facebook/create-react-app/issues/1765
 - Page reload routing solved by: https://github.com/rafrex/spa-github-pages
 - Implemented react-transition-group on routing solved by: https://medium.com/lalilo/dynamic-transitions-with-react-router-and-react-transition-group-69ab795815c9 (simple example: https://reacttraining.com/react-router/web/example/animated-transitions)
-- 
+- Integrate phaser 3: https://www.npmjs.com/package/phaser (base game: https://phaser.io/tutorials/making-your-first-phaser-3-game/part1)
+- Understanding how webpack is integrated--html-webpack-plugin: (https://blog.logrocket.com/getting-started-with-create-react-app-d93147444a27/)
+- Load game images solved by: https://phaser.discourse.group/t/this-load-image-file-path-not-working/1566

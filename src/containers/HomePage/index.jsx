@@ -8,6 +8,7 @@ import Card from "../../components/Card";
 import ImageOvercooked from "../../images/overcooked.png";
 import ImageHighlightBg from "../../images/highlight-bg-chars.png";
 import ImageDogs from "../../images/photoshop/puppy-rumble.png";
+import Game from "../../components/Phaser";
 
 const CONTENT = {
   HomePage: {
@@ -60,15 +61,16 @@ function HomePage() {
   return (
     <div className="home">
       <PageHelmet
-        title="About Page"
+        title="Home Page"
         metas={[
           {
             name: "description",
-            content: "Stephanie Hong: About Page"
+            content: "Stephanie Hong: Home Page"
           }
         ]}
       />
 
+      <Game />
       <MastHead
         backgroundImage={CONTENT.HomePage.mastHead.backgroundImage}
         title={CONTENT.HomePage.mastHead.title}
