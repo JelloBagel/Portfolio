@@ -1,21 +1,25 @@
 {
   "files": {
-    "main.css": "/site/static/css/main.feb77852.chunk.css",
-    "main.js": "/site/static/js/main.f037dd85.chunk.js",
-    "main.js.map": "/site/static/js/main.f037dd85.chunk.js.map",
+    "main.css": "/site/static/css/main.0acce43f.chunk.css",
+    "main.js": "/site/static/js/main.576577b6.chunk.js",
+    "main.js.map": "/site/static/js/main.576577b6.chunk.js.map",
     "runtime~main.js": "/site/static/js/runtime~main.de27f395.js",
     "runtime~main.js.map": "/site/static/js/runtime~main.de27f395.js.map",
-    "static/js/2.7482f9f2.chunk.js": "/site/static/js/2.7482f9f2.chunk.js",
-    "static/js/2.7482f9f2.chunk.js.map": "/site/static/js/2.7482f9f2.chunk.js.map",
+    "static/js/2.23b0f1ef.chunk.js": "/site/static/js/2.23b0f1ef.chunk.js",
+    "static/js/2.23b0f1ef.chunk.js.map": "/site/static/js/2.23b0f1ef.chunk.js.map",
     "index.html": "/site/index.html",
-    "precache-manifest.6243e458ddb276f64b7960969ca784a6.js": "/site/precache-manifest.6243e458ddb276f64b7960969ca784a6.js",
+    "precache-manifest.ad7423cfc4dca06d4f52477aa1271b4b.js": "/site/precache-manifest.ad7423cfc4dca06d4f52477aa1271b4b.js",
     "service-worker.js": "/site/service-worker.js",
-    "static/css/main.feb77852.chunk.css.map": "/site/static/css/main.feb77852.chunk.css.map",
+    "static/css/main.0acce43f.chunk.css.map": "/site/static/css/main.0acce43f.chunk.css.map",
+    "static/media/bomb.png": "/site/static/media/bomb.185c1ec9.png",
+    "static/media/dude.png": "/site/static/media/dude.8615288f.png",
     "static/media/highlight-bg-chars.png": "/site/static/media/highlight-bg-chars.ba8534bb.png",
-    "static/media/logo.png": "/site/static/media/logo.895ceb8e.png",
     "static/media/overcooked.png": "/site/static/media/overcooked.d628d14c.png",
     "static/media/pachimaru.png": "/site/static/media/pachimaru.ff44b1b0.png",
+    "static/media/index.scss": "/site/static/media/pdf.a7bd8722.png",
     "static/media/platform.png": "/site/static/media/platform.fc7d654a.png",
-    "static/media/puppy-rumble.png": "/site/static/media/puppy-rumble.9aa57fba.png"
+    "static/media/puppy-rumble.png": "/site/static/media/puppy-rumble.9aa57fba.png",
+    "static/media/sky.png": "/site/static/media/sky.cb8fe210.png",
+    "static/media/star.png": "/site/static/media/star.3bbfad74.png"
   }
 }
