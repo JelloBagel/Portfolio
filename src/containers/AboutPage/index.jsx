@@ -2,57 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import PageHelmet from "../../components/PageHelmet";
+import MastHead from "../../components/MastHead";
 
-import ImageOvercooked from "../../images/overcooked.png";
-import ImageDogs from "../../images/photoshop/puppy-rumble.png";
-
-const CONTENT = {
-  AboutPage: {
-    mastHead: {
-      backgroundImage: ImageOvercooked,
-      title: "Hello"
-      // subtitle: "Hello World"
-    },
-    description:
-      "Independent developer who is passionate about learning more about programming",
-    cardTitle: "Highlights",
-    cards: [
-      {
-        button: {
-          buttonType: "link",
-          buttonRoute: "/about"
-        },
-        content: {
-          title: "About Me",
-          image: { src: ImageDogs, alt: "About Me" },
-          content: "Puzzle-loving, game-playing, web developing girl"
-        }
-      },
-      {
-        button: {
-          buttonType: "link",
-          buttonRoute: "/projects"
-        },
-        content: {
-          image: { src: ImageDogs, alt: "Game Projects" },
-          title: "Game Projects",
-          content: "Games are how I learn best!"
-        }
-      },
-      {
-        button: {
-          buttonType: "link",
-          buttonRoute: "/media"
-        },
-        content: {
-          title: "Media",
-          image: { src: ImageDogs, alt: "Media" },
-          content: "Past creative projects"
-        }
-      }
-    ]
-  }
-};
+import CONTENT from "../CMS";
 
 function AboutPage() {
   return (
@@ -66,6 +18,12 @@ function AboutPage() {
               content: "Stephanie Hong: Home Page"
             }
           ]}
+        />
+
+        <MastHead
+          backgroundImage={CONTENT.AboutPage.mastHead.backgroundImage}
+          title={CONTENT.AboutPage.mastHead.title}
+          subtitle={CONTENT.AboutPage.mastHead.subtitle}
         />
 
         <h1>World Animation</h1>

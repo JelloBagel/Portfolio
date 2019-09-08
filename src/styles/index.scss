@@ -5,10 +5,11 @@
 @import "./global.scss";
 
 // Base Component styles
+@import "../components/Card/base.scss";
 @import "../components/Footer/base.scss";
 @import "../components/Header/base.scss";
 @import "../components/MastHead/base.scss";
-@import "../components/Card/base.scss";
+@import "../components/NumberToText/base.scss";
 
 // Container styles
 @import "../containers/HomePage/base.scss";

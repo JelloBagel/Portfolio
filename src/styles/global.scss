@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background-color: $color-footerBg;
+  background-color: $color-pageBackground;
   text-align: left;
   margin: 0;
 }
@@ -28,12 +28,12 @@ img {
   border-style: none;
 }
 
-.fade-enter {
+.transition-enter {
   opacity: 0;
   z-index: 1;
 }
 
-.fade-enter-active {
+.transition-enter-active {
   opacity: 1;
-  transition: opacity 2900ms ease-in;
+  transition: opacity 290ms ease-in;
 }

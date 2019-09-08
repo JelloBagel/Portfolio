@@ -46,6 +46,11 @@ function Button({ route, handleRoute, buttonType, classes, children }) {
   };
 
   //TODO add modal
+
+  const renderModal = () => {
+    return <div className="modal">{renderContent()}</div>;
+  };
+
   const renderContent = () => {
     return children;
   };
@@ -61,6 +66,9 @@ function Button({ route, handleRoute, buttonType, classes, children }) {
       break;
     case "onClick":
       button = renderOnClick();
+      break;
+    case "modal":
+      button = renderModal();
       break;
     default:
       button = "No Button Type";
