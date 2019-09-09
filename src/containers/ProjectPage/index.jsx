@@ -46,16 +46,24 @@ function ProjectsPage() {
 
       <Game />
 
-      <div className="projects__cards" style={{ backgroundImage: `url()` }}>
-        <div className="projects__cards__container">
-          <h1 className="projects__cards__container__title">
+      <div className="projects__games" style={{ backgroundImage: `url()` }}>
+        <div className="projects__games__container">
+          <h1 className="projects__games__container__title">
             {CONTENT.ProjectsPage.gamesTitle}
           </h1>
           {CONTENT.ProjectsPage.games
-            ? CONTENT.ProjectsPage.games.map(game => renderGames(game))
+            ? CONTENT.ProjectsPage.games.map(card => (
+                <Card
+                  content={card.content}
+                  button={card.button}
+                  key={card.content.title}
+                />
+              ))
             : null}
         </div>
+      </div>
 
+      <div className="projects__cards" style={{ backgroundImage: `url()` }}>
         <div className="projects__cards__container">
           <h1 className="projects__cards__container__title">
             {CONTENT.ProjectsPage.cardTitle}
@@ -70,7 +78,9 @@ function ProjectsPage() {
               ))
             : null}
         </div>
+      </div>
 
+      <div className="projects__photos" style={{ backgroundImage: `url()` }}>
         <div className="projects__photos__container">
           <h1 className="projects__photos__container__title">
             {CONTENT.ProjectsPage.photoTitle}

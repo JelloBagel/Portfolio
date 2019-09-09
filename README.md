@@ -35,3 +35,4 @@ Builds the app for production to Github.<br>
 - Integrate phaser 3: https://www.npmjs.com/package/phaser (base game: https://phaser.io/tutorials/making-your-first-phaser-3-game/part1)
 - Understanding how webpack is integrated--html-webpack-plugin: (https://blog.logrocket.com/getting-started-with-create-react-app-d93147444a27/)
 - Load game images, (url-loader converts small images into base64) solved by: https://github.com/webpack-contrib/file-loader
+- Phaser game not unmounting on route change solved by: http://www.html5gamedevs.com/topic/32563-whats-the-proper-way-to-destroy-a-phaser-3-game-instance/

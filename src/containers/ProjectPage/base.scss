@@ -1,4 +1,4 @@
-.home {
+.projects {
   padding-top: $navHeight;
 
   &__description {
@@ -10,7 +10,9 @@
   }
 }
 
-.home__cards {
+.projects__cards,
+.projects__games,
+.projects__photos {
   background-repeat: no-repeat;
   background-size: cover;
   background-position-x: center;
@@ -72,7 +74,7 @@
   font-size: 1.5em;
 }
 a.project-title {
-  background: transparent url("../img/target_blank.png") center right no-repeat;
+  // background: transparent url("../img/target_blank.png") center right no-repeat;
   padding-right: 23px;
 }
 .project-title:hover {

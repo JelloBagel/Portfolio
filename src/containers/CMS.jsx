@@ -1,4 +1,8 @@
 import ImageHighlightBg from "../images/highlight-bg.png";
+import ImageBB1 from "../images/img-block-breaker/bb1.PNG";
+import ImageBB2 from "../images/img-block-breaker/bb2.PNG";
+import ImageBB3 from "../images/img-block-breaker/bb3.PNG";
+
 import ImageDogs from "../images/photoshop/puppy-rumble-cropped.png";
 import ImageSpringPicnic from "../images/photoshop/spring-picnic-cropped.jpg";
 import ImageStevonnie from "../images/photoshop/stevonnie-cropped.jpg";
@@ -98,21 +102,31 @@ export default {
     gamesTitle: "Games",
     games: [
       {
-        title: "Block Breaker",
-        images: [
-          {
-            src: "/img/img-block-breaker/bb1.PNG",
-            alt: "Block Breaker Home Screen"
-          },
-          {
-            src: "/img/img-block-breaker/bb2.PNG",
-            alt: "Block Breaker Gameplay"
-          },
-          {
-            src: "/img/img-block-breaker/bb3.PNG",
-            alt: "Block Breaker Gameplay 2"
-          }
-        ]
+        button: {
+          buttonType: "modal"
+        },
+        content: {
+          title: "Block Breaker Gameplay 1",
+          image: { src: ImageBB1, alt: "Block Breaker Gameplay 1" }
+        }
+      },
+      {
+        button: {
+          buttonType: "modal"
+        },
+        content: {
+          title: "Block Breaker Gameplay 2",
+          image: { src: ImageBB2, alt: "Block Breaker Gameplay 2" }
+        }
+      },
+      {
+        button: {
+          buttonType: "modal"
+        },
+        content: {
+          title: "Block Breaker Gameplay 3",
+          image: { src: ImageBB3, alt: "Block Breaker Gameplay 3" }
+        }
       }
     ],
     cardTitle: "Cinematography",
