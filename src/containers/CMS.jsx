@@ -1,23 +1,23 @@
-import ImageHighlightBg from "../images/highlight-bg.png";
 import ImageBB1 from "../images/img-block-breaker/bb1.PNG";
 import ImageBB2 from "../images/img-block-breaker/bb2.PNG";
 import ImageBB3 from "../images/img-block-breaker/bb3.PNG";
 
-import ImageDogs from "../images/photoshop/puppy-rumble-cropped.png";
+import ImageDogs from "../images/photoshop/puppy-rumble.png";
+import ImageDogsCropped from "../images/photoshop/puppy-rumble-cropped.png";
 import ImageSpringPicnic from "../images/photoshop/spring-picnic-cropped.jpg";
 import ImageStevonnie from "../images/photoshop/stevonnie-cropped.jpg";
 import ImageGrad from "../images/photography/grad-picture-cropped.png";
 import ImageMark from "../images/photography/mark-cropped.jpg";
 import ImageWesley from "../images/photography/wesley-cropped.jpg";
 import ImageRyan from "../images/photography/ryan-cropped.jpg";
+import ImagePlaceholder60 from "../images/60.png";
 
 import ImageOvercooked from "../images/overcooked.png";
 
 export default {
   HomePage: {
     description: "Independent developer passionate about programming",
-    cardBackground: ImageHighlightBg,
-    cardTitle: "Highlights",
+    cardTitle: "Featured News",
     cards: [
       {
         button: {
@@ -26,8 +26,8 @@ export default {
         },
         content: {
           title: "About Me",
-          image: { src: ImageDogs, alt: "About Me" },
-          content: "Puzzle-loving, game-playing, web developing girl"
+          image: { src: ImageDogsCropped, alt: "About Me" },
+          content: "Puzzle-loving, game-playing, web-developing girl"
         }
       },
       {
@@ -36,7 +36,7 @@ export default {
           buttonRoute: "/projects"
         },
         content: {
-          image: { src: ImageDogs, alt: "Game Projects" },
+          image: { src: ImageDogsCropped, alt: "Game Projects" },
           title: "Game Projects",
           content: "Games are how I learn best!"
         }
@@ -48,7 +48,7 @@ export default {
         },
         content: {
           title: "Media",
-          image: { src: ImageDogs, alt: "Media" },
+          image: { src: ImageDogsCropped, alt: "Media" },
           content: "Past creative projects"
         }
       }
@@ -56,44 +56,46 @@ export default {
   },
   AboutPage: {
     mastHead: {
-      backgroundImage: ImageOvercooked,
-      title: "Stephanie Hong"
+      backgroundImage: ImageOvercooked
     },
     description:
       "Independent developer who is passionate about learning more about programming",
-    cardTitle: "Highlights",
+    endorsements: [
+      {
+        content: {
+          title: "Shot Caller",
+          subtitle: "Leader, Strategist",
+          image: { src: ImagePlaceholder60, alt: "Shot Caller" },
+          content:
+            "Earn Shot Caller endorsements by leading or executing strategies on the battlefield."
+        }
+      },
+      {
+        content: {
+          title: "Good Teammate",
+          subtitle: "Helpful, Effective Communication",
+          image: { src: ImagePlaceholder60, alt: "Good Teammate" },
+          content:
+            "Reward highly effective team players with a Good Teammate endorsement."
+        }
+      },
+      {
+        content: {
+          title: "Sportsmanship",
+          subtitle: "Positive, Respectful",
+          image: { src: ImagePlaceholder60, alt: "Sportsmanship" },
+          content:
+            "Grant Sportsmanship endorsements to players who are a positive influence in-game."
+        }
+      }
+    ],
     cards: [
       {
-        button: {
-          buttonType: "link",
-          buttonRoute: "/about"
-        },
         content: {
-          title: "About Me",
-          image: { src: ImageDogs, alt: "About Me" },
-          content: "Puzzle-loving, game-playing, web developing girl"
-        }
-      },
-      {
-        button: {
-          buttonType: "link",
-          buttonRoute: "/projects"
-        },
-        content: {
-          image: { src: ImageDogs, alt: "Game Projects" },
-          title: "Game Projects",
-          content: "Games are how I learn best!"
-        }
-      },
-      {
-        button: {
-          buttonType: "link",
-          buttonRoute: "/media"
-        },
-        content: {
-          title: "Media",
-          image: { src: ImageDogs, alt: "Media" },
-          content: "Past creative projects"
+          title: "Looking For A Company",
+          image: { src: ImageDogs, alt: "Looking For A Company" },
+          content:
+            "Play your way using the Looking for Group tool! You can control your gameplay experience by hosting a group with custom options, including restricting endorsement level, prior to queueing up for Quick Play, Play vs AI, or any competitive mode. Choose to join a team of like-minded people or assemble your own. Feel free to reach out at <a href='mailto:stephielhong@gmail.com'>stephielhong@gmail.com</a>."
         }
       }
     ]
@@ -196,7 +198,7 @@ export default {
         },
         content: {
           title: "Dogs",
-          image: { src: ImageDogs, alt: "overwatch dogs" },
+          image: { src: ImageDogsCropped, alt: "overwatch dogs" },
           content: "Overwatch Heroes as Dogs"
         }
       },

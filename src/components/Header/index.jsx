@@ -32,7 +32,13 @@ function Header() {
 
   // Render brand logo and click
   const renderBrand = classModifier => (
-    <React.Fragment>
+    <Button
+      buttonType="link"
+      classes={classNames("brand__btn", {
+        [`brand__btn--${classModifier}`]: !!classModifier
+      })}
+      route="/"
+    >
       <img
         className={classNames("brand__img", {
           [`brand__img--${classModifier}`]: !!classModifier
@@ -40,16 +46,9 @@ function Header() {
         src={imgLogo}
         alt="navigation toggler"
       />
-      <Button
-        buttonType="link"
-        classes={classNames("brand__btn", {
-          [`brand__btn--${classModifier}`]: !!classModifier
-        })}
-        route="/"
-      >
-        <FormattedMessage {...messages.home} />
-      </Button>
-    </React.Fragment>
+
+      <FormattedMessage {...messages.home} />
+    </Button>
   );
 
   return (

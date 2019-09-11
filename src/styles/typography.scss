@@ -1,5 +1,7 @@
-$font-sans: "Century Gothic", "AppleGothic", sans-serif;
 @import url("https://fonts.googleapis.com/css?family=Lato:700,700i,900,900i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:400,500,500i,600,600i,700,700i,800,800i&display=swap");
+$font-sans-serif: "Fira Sans Extra Condensed", "sans-serif";
+$font-sans-serif-Lato: "Lato", "sans-serif";
 
 @mixin font-rendering {
   -webkit-font-smoothing: antialiased;
@@ -7,32 +9,51 @@ $font-sans: "Century Gothic", "AppleGothic", sans-serif;
 }
 
 @mixin font-sanN4 {
-  font-family: "Lato", $font-sans;
-  font-weight: 400;
-  @include font-rendering;
-}
-
-@mixin font-sanN7 {
-  font-family: "Lato", $font-sans;
+  font-family: $font-sans-serif-Lato;
   font-weight: 700;
   @include font-rendering;
 }
 
-@mixin font-sanN9 {
-  font-family: "Lato", $font-sans;
-  font-weight: 900;
+@mixin font-sanN4Fira {
+  font-family: $font-sans-serif;
+  font-weight: 400;
+  @include font-rendering;
+}
+
+@mixin font-sanN6 {
+  font-family: $font-sans-serif;
+  font-weight: 600;
+  @include font-rendering;
+}
+
+@mixin font-sanN6I {
+  font-family: $font-sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  @include font-rendering;
+}
+
+@mixin font-sanN7 {
+  font-family: $font-sans-serif;
+  font-weight: 700;
   @include font-rendering;
 }
 
 @mixin font-sanN7I {
-  font-family: "Lato", $font-sans;
+  font-family: $font-sans-serif;
   font-weight: 700;
   font-style: italic;
   @include font-rendering;
 }
 
+@mixin font-sanN9 {
+  font-family: $font-sans-serif-Lato;
+  font-weight: 900;
+  @include font-rendering;
+}
+
 @mixin font-sanN9I {
-  font-family: "Lato", $font-sans;
+  font-family: $font-sans-serif-Lato;
   font-weight: 900;
   font-style: italic;
   @include font-rendering;

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import PageHelmet from "../../components/PageHelmet";
 import MastHead from "../../components/MastHead";
+import Card from "../../components/Card";
 
 import CONTENT from "../CMS";
 
@@ -25,34 +26,42 @@ function AboutPage() {
           title={CONTENT.AboutPage.mastHead.title}
           subtitle={CONTENT.AboutPage.mastHead.subtitle}
         />
+        <p>World zoom animation, spells out name animation</p>
 
-        <h1>World Animation</h1>
-        <iframe
-          title="San Francisco Bay Area"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d680613.9215593301!2d-122.55716071541039!3d37.58607520603601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808583a3a688d7b5%3A0x8c891b8457461fa9!2sSan+Francisco+Bay+Area%2C+CA!5e0!3m2!1sen!2sus!4v1533108743910"
-          width="100%"
-          height="300"
-          frameBorder="0"
-          style={{ border: 0 }}
-          allowFullScreen
-        ></iframe>
-
-        <div className="home__cards">
-          <div>
-            <h2>Contact Me</h2>
-            <h3>For more information</h3>
-            <address className="contact-details">
-              <p>
-                If you have any questions, I am happy to answer. Feel free to
-                say hello!
-              </p>
-              <h4>Email</h4>
-              <a href="mailto:stephielhong@gmail.com">stephielhong@gmail.com</a>
-              <h4>Linked In</h4>
-              <a href="mailto:stephielhong@gmail.com">stephielhong@gmail.com</a>
-            </address>
+        <div
+          className="about__cards"
+          style={
+            CONTENT.AboutPage.cardBackground
+              ? { backgroundImage: `url(${CONTENT.AboutPage.cardBackground})` }
+              : null
+          }
+        >
+          <h1 className="about__cards__title">{CONTENT.AboutPage.cardTitle}</h1>
+          <div className="about__cards__container">
+            {CONTENT.AboutPage.cards
+              ? CONTENT.AboutPage.cards.map(card => (
+                  <Card key={card.content.title} content={card.content} />
+                ))
+              : null}
           </div>
-          <div></div>
+        </div>
+
+        <div
+          className="about__endorsements"
+          style={
+            CONTENT.AboutPage.cardBackground
+              ? { backgroundImage: `url(${CONTENT.AboutPage.cardBackground})` }
+              : null
+          }
+        >
+          <h1 className="about__endorsements__title">{CONTENT.AboutPage.cardTitle}</h1>
+          <div className="about__endorsements__container">
+            {CONTENT.AboutPage.endorsements
+              ? CONTENT.AboutPage.endorsements.map(card => (
+                  <Card key={card.content.title} content={card.content} />
+                ))
+              : null}
+          </div>
         </div>
       </div>
     </div>

@@ -2,18 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import Button from "../Button";
 
-function Card({ button, content }) {
+function Card({ content }) {
   return (
     <div
       className="card"
-      style={{ backgroundImage: `url(${content.backgroundImage})` }}
+      style={
+        content.backgroundImage
+          ? { backgroundImage: `url(${content.backgroundImage})` }
+          : null
+      }
     >
-      <Button
-        buttonType={button.buttonType}
-        classes="card__container"
-        route={button.buttonRoute}
-        key={button.buttonRoute}
-      >
+      <div className="card__container">
         {content.image ? (
           <img
             className="card__container__img"
@@ -25,17 +24,32 @@ function Card({ button, content }) {
           {content.title ? (
             <h4 className="card__container__text__title">{content.title}</h4>
           ) : null}
+          {content.subtitle ? (
+            <h4 className="card__container__text__subtitle">
+              {content.subtitle}
+            </h4>
+          ) : null}
           {content.content ? (
-            <p className="card__container__text__content">{content.content}</p>
+            <div
+              className="card__container__text__content"
+              dangerouslySetInnerHTML={{ __html: content.content }}
+            />
+          ) : null}
+          {content.button ? (
+            <Button
+              buttonType={content.button.buttonType}
+              classes="card__container__text__btn"
+              route={content.button.buttonRoute}
+              key={content.button.buttonRoute}
+            />
           ) : null}
         </div>
-      </Button>
+      </div>
     </div>
   );
 }
 
 Card.propTypes = {
-  button: PropTypes.object,
   content: PropTypes.object
 };
 export default Card;

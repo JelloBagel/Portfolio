@@ -8,8 +8,10 @@ function MastHead({ backgroundImage, title, subtitle }) {
         className="mastHead__wrapper"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <h1 className="mastHead__wrapper__title">{title}</h1>
-        <h3 className="mastHead__wrapper__title">{subtitle}</h3>
+        {title ? <h1 className="mastHead__wrapper__title">{title}</h1> : null}
+        {subtitle ? (
+          <h3 className="mastHead__wrapper__title">{subtitle}</h3>
+        ) : null}
       </div>
     </div>
   );

@@ -2,19 +2,20 @@
   @include font-sanN4;
   color: $color-navText;
   height: 100%;
-  padding-top: 70px;
+  position: relative;
 
   &.is-docked {
-    padding: 0;
+    height: auto;
     left: 0;
+    padding: 0;
     position: fixed;
     right: 0;
     z-index: 1000;
-    height: auto;
 
     .navigation__container {
       margin: 0;
       width: 100%;
+      top: 0;
     }
   }
 
@@ -26,6 +27,11 @@
     margin: 0 auto;
     width: fit-content;
     min-width: 768px;
+    position: absolute;
+    top: $navFromTop;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
 
     &__hamburger--mobile,
     .brand__img--mobile,
@@ -72,6 +78,18 @@
       display: flex;
       text-align: center;
 
+      .brand__btn {
+        a {
+          display: flex;
+          padding: 0;
+
+          span {
+            padding-left: 15px;
+            margin: auto;
+          }
+        }
+      }
+
       img {
         height: $navHeight;
       }
@@ -102,13 +120,24 @@
 .navigation.is-mobile {
   .navigation__container {
     min-width: unset;
+    justify-content: center;
+    left: 0;
+    transform: none;
 
     &__hamburger--mobile {
       display: block;
+      position: absolute;
+      left: 0;
 
       svg {
         height: 48px;
         fill: $color-hamburger;
+      }
+    }
+
+    &__brand {
+      span {
+        display: none;
       }
     }
 
@@ -160,10 +189,16 @@
       }
 
       // Brand logo
-      // .brand__btn--mobile,
+      .brand__btn--mobile,
       .brand__img--mobile {
         display: block;
         margin: 0 auto 10px;
+      }
+
+      .brand__btn--mobile {
+        span {
+          display: none;
+        }
       }
 
       // Navigation items

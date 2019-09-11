@@ -1,7 +1,7 @@
 // based on https://codepen.io/ellgine/pen/EjeXOZ
 
 $colors: (
-  background: $color-pageBackground,
+  background: $color-homepageHeader,
   text: #eee
 );
 
@@ -80,8 +80,9 @@ $config: (
 
 .numberToText {
   text-align: center;
-  height: 600px;
+  height: 700px;
   display: flex;
+  background-color: color(background);
 
   &__letters {
     margin: auto;
