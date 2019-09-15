@@ -9,6 +9,7 @@ import subtitleBgImg from "../../../images/game/subtitle_bg.png";
 
 import hydrantImg from "../../../images/game/hydrant.png";
 import dudeImg from "../../../images/game/dude.png";
+import playerIdleImg from "../../../images/game/player_idle.png";
 
 export default class loading extends Phaser.Scene {
   constructor() {
@@ -24,6 +25,10 @@ export default class loading extends Phaser.Scene {
     this.load.image("subtitleBg", subtitleBgImg);
 
     this.load.image("hydrant", hydrantImg);
+    this.load.spritesheet("player_idle", playerIdleImg, {
+      frameWidth: 100,
+      frameHeight: 60
+    });
     this.load.spritesheet("dude", dudeImg, {
       frameWidth: 32,
       frameHeight: 48
