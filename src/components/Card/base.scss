@@ -25,46 +25,44 @@
       width: 100%;
     }
 
-    .card__container__text {
-      &__title {
-        flex-basis: 100%;
-        width: 100%;
-        color: $color-cardTitle;
-        line-height: 1.5em;
-        margin-top: 0;
-        margin-bottom: 5px;
-        text-transform: uppercase;
-        font-size: 54px;
-        line-height: 50px;
-        @include font-sanN6I;
+    &__title {
+      flex-basis: 100%;
+      width: 100%;
+      color: $color-cardTitle;
+      line-height: 1.5em;
+      margin-top: 0;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      font-size: 54px;
+      line-height: 50px;
+      @include font-sanN6I;
 
-        @include mq-tablet {
-          font-size: 40px;
-          line-height: 41px;
-        }
+      @include mq-tablet {
+        font-size: 40px;
+        line-height: 41px;
       }
+    }
 
-      &__subtitle {
-        flex-basis: 100%;
-        width: 100%;
-        color: $color-cardTitle;
-        line-height: 1.5em;
-        margin-top: 0;
-        margin-bottom: 5px;
-        font-size: 20px;
-        @include font-sanN6I;
-      }
+    &__subtitle {
+      flex-basis: 100%;
+      width: 100%;
+      color: $color-cardTitle;
+      line-height: 1.5em;
+      margin-top: 0;
+      margin-bottom: 5px;
+      font-size: 20px;
+      @include font-sanN6I;
+    }
 
-      &__content {
-        flex-basis: 100%;
-        width: 100%;
-        color: $color-cardContent;
-        font-size: 20px;
-        line-height: 1.8rem;
-        margin-top: 0;
-        margin-bottom: 5px;
-        @include font-sanN4Fira;
-      }
+    &__content {
+      flex-basis: 100%;
+      width: 100%;
+      color: $color-cardContent;
+      font-size: 20px;
+      line-height: 1.8rem;
+      margin-top: 0;
+      margin-bottom: 5px;
+      @include font-sanN4Fira;
     }
   }
 }

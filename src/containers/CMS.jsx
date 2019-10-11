@@ -60,42 +60,42 @@ export default {
     },
     description:
       "Independent developer who is passionate about learning more about programming",
+    cards: [
+      {
+        content: {
+          svg: "IconFindGroup",
+          title: "Looking For A Company",
+          content:
+            "Play your way using the Looking for Group tool! You can control your gameplay experience by hosting a group with custom options, including restricting endorsement level, prior to queueing up for Quick Play, Play vs AI, or any competitive mode. Choose to join a team of like-minded people or assemble your own. Feel free to reach out at <a href='mailto:stephielhong@gmail.com'>stephielhong@gmail.com</a>."
+        }
+      }
+    ],
     endorsements: [
       {
         content: {
+          svg: "IconPointingHand",
           title: "Shot Caller",
           subtitle: "Leader, Strategist",
-          image: { src: ImagePlaceholder60, alt: "Shot Caller" },
           content:
             "Earn Shot Caller endorsements by leading or executing strategies on the battlefield."
         }
       },
       {
         content: {
+          svg: "IconFistBump",
           title: "Good Teammate",
           subtitle: "Helpful, Effective Communication",
-          image: { src: ImagePlaceholder60, alt: "Good Teammate" },
           content:
             "Reward highly effective team players with a Good Teammate endorsement."
         }
       },
       {
         content: {
+          svg: "IconHandshake",
           title: "Sportsmanship",
           subtitle: "Positive, Respectful",
-          image: { src: ImagePlaceholder60, alt: "Sportsmanship" },
           content:
             "Grant Sportsmanship endorsements to players who are a positive influence in-game."
-        }
-      }
-    ],
-    cards: [
-      {
-        content: {
-          title: "Looking For A Company",
-          image: { src: ImageDogs, alt: "Looking For A Company" },
-          content:
-            "Play your way using the Looking for Group tool! You can control your gameplay experience by hosting a group with custom options, including restricting endorsement level, prior to queueing up for Quick Play, Play vs AI, or any competitive mode. Choose to join a team of like-minded people or assemble your own. Feel free to reach out at <a href='mailto:stephielhong@gmail.com'>stephielhong@gmail.com</a>."
         }
       }
     ]

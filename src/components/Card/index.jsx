@@ -1,8 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Button from "../Button";
+import {
+  IconPointingHand,
+  IconFistBump,
+  IconHandshake,
+  IconFindGroup
+} from "../Icons";
 
-function Card({ content }) {
+const Card = ({ content }) => {
+  const renderSvg = svg => {
+    let icon = null;
+    switch (svg) {
+      case "IconPointingHand":
+        icon = <IconPointingHand />;
+        break;
+      case "IconFistBump":
+        icon = <IconFistBump />;
+        break;
+      case "IconHandshake":
+        icon = <IconHandshake />;
+        break;
+      case "IconFindGroup":
+        icon = <IconFindGroup />;
+        break;
+      default:
+        icon = null;
+    }
+    return <div className="card__container__svg">{icon}</div>;
+  };
   return (
     <div
       className="card"
@@ -20,34 +46,31 @@ function Card({ content }) {
             alt={content.image.alt}
           />
         ) : null}
-        <div className="card__container__text">
-          {content.title ? (
-            <h4 className="card__container__text__title">{content.title}</h4>
-          ) : null}
-          {content.subtitle ? (
-            <h4 className="card__container__text__subtitle">
-              {content.subtitle}
-            </h4>
-          ) : null}
-          {content.content ? (
-            <div
-              className="card__container__text__content"
-              dangerouslySetInnerHTML={{ __html: content.content }}
-            />
-          ) : null}
-          {content.button ? (
-            <Button
-              buttonType={content.button.buttonType}
-              classes="card__container__text__btn"
-              route={content.button.buttonRoute}
-              key={content.button.buttonRoute}
-            />
-          ) : null}
-        </div>
+        {renderSvg(content.svg)}
+        {content.title ? (
+          <h4 className="card__container__title">{content.title}</h4>
+        ) : null}
+        {content.subtitle ? (
+          <h4 className="card__container__subtitle">{content.subtitle}</h4>
+        ) : null}
+        {content.content ? (
+          <div
+            className="card__container__content"
+            dangerouslySetInnerHTML={{ __html: content.content }}
+          />
+        ) : null}
+        {content.button ? (
+          <Button
+            buttonType={content.button.buttonType}
+            classes="card__container__btn"
+            route={content.button.buttonRoute}
+            key={content.button.buttonRoute}
+          />
+        ) : null}
       </div>
     </div>
   );
-}
+};
 
 Card.propTypes = {
   content: PropTypes.object
