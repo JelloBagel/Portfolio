@@ -12,11 +12,11 @@ function AboutPage() {
     <div>
       <div className="about">
         <PageHelmet
-          title="Home Page"
+          title="Stephanie Hong"
           metas={[
             {
               name: "description",
-              content: "Stephanie Hong: Home Page"
+              content: "Stephanie Hong: About Page"
             }
           ]}
         />
@@ -26,7 +26,14 @@ function AboutPage() {
           title={CONTENT.AboutPage.mastHead.title}
           subtitle={CONTENT.AboutPage.mastHead.subtitle}
         />
-        <p>World zoom animation, spells out name animation</p>
+
+        <div className="about__me">
+          {CONTENT.AboutPage.me
+            ? CONTENT.AboutPage.me.map(card => (
+                <Card key={card.content.title} content={card.content} />
+              ))
+            : null}
+        </div>
 
         <div
           className="about__cards"
@@ -36,7 +43,6 @@ function AboutPage() {
               : null
           }
         >
-          <h1 className="about__cards__title">{CONTENT.AboutPage.cardTitle}</h1>
           <div className="about__cards__container">
             {CONTENT.AboutPage.cards
               ? CONTENT.AboutPage.cards.map(card => (
@@ -54,7 +60,9 @@ function AboutPage() {
               : null
           }
         >
-          <h1 className="about__endorsements__title">{CONTENT.AboutPage.cardTitle}</h1>
+          <h1 className="about__endorsements__title">
+            {CONTENT.AboutPage.cardTitle}
+          </h1>
           <div className="about__endorsements__container">
             {CONTENT.AboutPage.endorsements
               ? CONTENT.AboutPage.endorsements.map(card => (

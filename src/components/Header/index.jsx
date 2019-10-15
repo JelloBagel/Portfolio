@@ -38,6 +38,7 @@ function Header() {
         [`brand__btn--${classModifier}`]: !!classModifier
       })}
       route="/"
+      handleRoute={() => setIsOpen(false)}
     >
       <img
         className={classNames("brand__img", {
@@ -99,6 +100,7 @@ function Header() {
             buttonType="link"
             classes="navigation__container__main__btn"
             route="/about"
+            handleRoute={() => setIsOpen(false)}
           >
             <FormattedMessage {...messages.about} />
           </Button>
@@ -106,6 +108,7 @@ function Header() {
             buttonType="link"
             classes="navigation__container__main__btn"
             route="/projects"
+            handleRoute={() => setIsOpen(false)}
           >
             <FormattedMessage {...messages.projects} />
           </Button>

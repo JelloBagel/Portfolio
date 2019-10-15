@@ -7,62 +7,62 @@
   justify-content: space-between;
   overflow: hidden;
   margin: 10px 0;
+}
 
-  .card__container {
+.card__container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &__title {
+    flex-basis: 100%;
     width: 100%;
-    height: 100%;
-    padding: 0;
+    color: $color-cardTitle;
+    line-height: 1.5em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 54px;
+    line-height: 50px;
+    @include font-sanN6I;
 
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-
-    .card__container__img {
-      max-width: 100%;
-      object-fit: cover;
-      position: relative;
-      width: 100%;
-    }
-
-    &__title {
-      flex-basis: 100%;
-      width: 100%;
-      color: $color-cardTitle;
-      line-height: 1.5em;
-      margin-top: 0;
-      margin-bottom: 5px;
-      text-transform: uppercase;
-      font-size: 54px;
-      line-height: 50px;
-      @include font-sanN6I;
-
-      @include mq-tablet {
-        font-size: 40px;
-        line-height: 41px;
-      }
-    }
-
-    &__subtitle {
-      flex-basis: 100%;
-      width: 100%;
-      color: $color-cardTitle;
-      line-height: 1.5em;
-      margin-top: 0;
-      margin-bottom: 5px;
-      font-size: 20px;
-      @include font-sanN6I;
-    }
-
-    &__content {
-      flex-basis: 100%;
-      width: 100%;
-      color: $color-cardContent;
-      font-size: 20px;
-      line-height: 1.8rem;
-      margin-top: 0;
-      margin-bottom: 5px;
-      @include font-sanN4Fira;
+    @include mq-tablet {
+      font-size: 40px;
+      line-height: 41px;
     }
   }
+
+  &__subtitle {
+    flex-basis: 100%;
+    width: 100%;
+    color: $color-cardTitle;
+    line-height: 1.5em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 20px;
+    @include font-sanN6I;
+  }
+
+  &__content {
+    flex-basis: 100%;
+    width: 100%;
+    color: $color-cardContent;
+    font-size: 20px;
+    line-height: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 5px;
+    @include font-sanN4Fira;
+  }
+}
+
+.card__container__img {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  width: 100%;
 }

@@ -1,13 +1,86 @@
 .about {
+  .mastHead {
+    height: 250px;
+    font-size: 40px;
+    line-height: 40px;
+    color: $color-aboutpageEndorsementTitle;
+    &__wrapper {
+      padding-top: $navHeight + $navFromTop;
+      &__title {
+        @include font-sanN6I;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &__me {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      height: 20px;
+      width: 100%;
+      border-bottom: 20px solid $color-aboutpageEndorsementBg;
+      left: 30%;
+      -webkit-transform: translateX(680px);
+      transform: translateX(680px);
+      border-left: 20px solid transparent;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -20px;
+      height: 20px;
+      width: 100%;
+      border-bottom: 20px solid $color-aboutpageEndorsementBg;
+      right: 30%;
+      transform: translateX(-680px);
+      border-right: 20px solid transparent;
+    }
+
+    .card {
+      width: 100%;
+      margin: 0;
+
+      &__container {
+        align-items: center;
+        justify-items: center;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto;
+        margin: auto;
+        max-width: 1440px;
+
+        &__title,
+        &__content {
+          grid-column: 1 / 2;
+          text-align: center;
+        }
+        &__img {
+          grid-row: 1 / 3;
+          grid-column: 2 / 3;
+          width: 200px;
+        }
+      }
+    }
+  }
+
   &__cards {
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
     background-position-y: top;
     position: relative;
-    padding: 60px 0;
 
     &__container {
+      background-color: #fff;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -28,11 +101,6 @@
       font-size: 54px;
       line-height: 50px;
       @include font-sanN6I;
-
-      @include mq-tablet {
-        font-size: 40px;
-        line-height: 41px;
-      }
     }
 
     svg {
@@ -41,12 +109,19 @@
     }
 
     .card {
+      width: 100%;
+      margin: 0;
+
       &__container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        height: 500px;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+
         &__svg {
-          flex-basis: 50%;
+          grid-row: 1 / 3;
+          text-align: center;
 
           &::before {
             content: "";
@@ -59,22 +134,14 @@
             -webkit-transform: skewX(-15deg);
             transform: skewX(-15deg);
           }
-
-          @mixin mq-tablet-wide {
-            background-color: #f7931e;
-
-            .card__container__svg::before {
-              content: none;
-            }
-          }
         }
 
         &__title {
-          flex-basis: 50%;
+          align-self: flex-end;
         }
 
         &__content {
-          flex-basis: 50%;
+          align-self: flex-start;
         }
       }
     }
@@ -84,6 +151,8 @@
     background-color: $color-aboutpageEndorsementBg;
     position: relative;
     padding: 60px 0;
+    max-width: 1440px;
+    margin: auto;
 
     &__container {
       display: -webkit-box;
@@ -99,18 +168,12 @@
     }
 
     .card {
-      flex-basis: 33%;
-      width: 33%;
-
-      @mixin mq-desktop {
-        flex-basis: 100%;
-        width: 100%;
-      }
+      flex-basis: 30%;
+      width: 30%;
 
       &__container {
         display: -ms-grid;
         display: grid;
-        grid-column-gap: 15px;
         -ms-grid-columns: auto 15px 1fr;
         grid-template-columns: 100%;
         grid-template-rows: repeat(3, auto) 1fr;
@@ -121,17 +184,22 @@
           "card-description";
         color: #fff;
         text-align: center;
-        margin: 0 30px;
 
         &__title,
         &__subtitle,
-        svg {
+        &__svg {
           background-color: #c918f4;
           color: #fff;
           margin-bottom: 0;
         }
 
-        svg {
+        &__title,
+        &__subtitle {
+          @include font-sanN4;
+          line-height: 1em;
+        }
+
+        &__svg {
           grid-area: card-image;
           align-self: self-start;
           justify-self: self-start;
@@ -145,23 +213,39 @@
           -ms-flex-align: center;
           align-items: center;
           width: 100%;
-          border-radius: 4px;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
           padding: 30px 0 15px;
+
+          svg {
+            width: 90px;
+            height: 90px;
+          }
         }
 
-        @mixin mq-tablet-wide {
-          grid-template-rows: repeat(2, auto) 1fr;
-          grid-template-areas:
-            "card-image card-title"
-            "card-image card-subtitle"
-            "card-image card-description";
+        &__title {
+          font-size: 24px;
+        }
+
+        &__subtitle {
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
+          font-size: 18px;
+          line-height: 22px;
+          padding: 5px 0 30px;
+        }
+
+        &__content {
+          margin: 15px;
+          text-align: center;
+          width: unset;
         }
       }
 
       &:first-child {
         .card__container__title,
         .card__container__subtitle,
-        svg {
+        .card__container__svg {
           background-color: #f19512;
         }
       }
@@ -169,18 +253,9 @@
       &:last-child {
         .card__container__title,
         .card__container__subtitle,
-        svg {
+        .card__container__svg {
           background-color: #3ece44;
         }
-      }
-    }
-    svg {
-      width: 90px;
-      height: 90px;
-
-      @mixin mq-tablet-wide {
-        width: 100px;
-        height: 100px;
       }
     }
   }
@@ -188,5 +263,128 @@
   svg {
     position: relative;
     fill: #fff;
+  }
+}
+
+@include mq-desktop {
+  .about {
+    &__cards {
+      &__title {
+        font-size: 40px;
+        line-height: 41px;
+      }
+
+      .card {
+        &__container {
+          height: auto;
+
+          &__svg {
+            background-color: #f7931e;
+            width: 100%;
+
+            &::before {
+              content: none;
+            }
+          }
+
+          &__title,
+          &__content {
+            text-align: center;
+            max-width: 600px;
+          }
+
+          &__title {
+            margin-top: 40px;
+          }
+
+          &__content {
+            margin-bottom: 40px;
+          }
+
+          grid-template-rows: auto auto auto;
+          grid-template-columns: auto;
+          justify-items: center;
+        }
+      }
+    }
+
+    &__endorsements {
+      padding: 30px 10px;
+
+      .card {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-basis: 100%;
+        flex-direction: column;
+        margin: 0 auto;
+        max-width: 750px;
+        width: 100%;
+
+        &__container {
+          grid-column-gap: 15px;
+          grid-template-rows: repeat(2, auto) 1fr;
+          grid-template-columns: auto 1fr;
+          grid-template-areas:
+            "card-image card-title"
+            "card-image card-subtitle"
+            "card-image card-description";
+          justify-items: flex-start;
+
+          &__title,
+          &__subtitle,
+          &__content {
+            background-color: transparent;
+            color: $color-aboutpageEndorsementTitle;
+            text-align: left;
+            padding: 0;
+            margin: 0;
+          }
+
+          &__svg {
+            border-radius: 4px;
+            padding: 10px;
+          }
+        }
+
+        &:first-child {
+          .card__container__title,
+          .card__container__subtitle {
+            background-color: transparent;
+          }
+        }
+
+        &:last-child {
+          .card__container__title,
+          .card__container__subtitle {
+            background-color: transparent;
+          }
+        }
+
+        &:not(:first-of-type):not(:last-of-type) {
+          margin: 30px 0;
+        }
+      }
+    }
+  }
+}
+
+@include mq-tablet {
+  .about {
+    &__endorsements {
+      .card {
+        &__container {
+          &__svg {
+            svg {
+              width: 50px;
+              height: 50px;
+            }
+          }
+        }
+      }
+    }
   }
 }

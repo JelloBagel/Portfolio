@@ -11,7 +11,7 @@ function HomePage() {
   return (
     <div className="home">
       <PageHelmet
-        title="Home Page"
+        title="Stephanie Hong"
         metas={[
           {
             name: "description",

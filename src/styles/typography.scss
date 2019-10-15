@@ -13,6 +13,7 @@ $font-sans-serif-Lato: "Lato", "sans-serif";
 @mixin font-sanN4 {
   font-family: $font-sans-serif-Lato;
   font-weight: 700;
+  font-style: normal;
   @include font-rendering;
 }
 

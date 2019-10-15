@@ -46,7 +46,7 @@ const Card = ({ content }) => {
             alt={content.image.alt}
           />
         ) : null}
-        {renderSvg(content.svg)}
+        {content.svg ? renderSvg(content.svg) : null}
         {content.title ? (
           <h4 className="card__container__title">{content.title}</h4>
         ) : null}

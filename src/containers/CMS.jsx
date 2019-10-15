@@ -2,7 +2,9 @@ import ImageBB1 from "../images/img-block-breaker/bb1.PNG";
 import ImageBB2 from "../images/img-block-breaker/bb2.PNG";
 import ImageBB3 from "../images/img-block-breaker/bb3.PNG";
 
-import ImageDogs from "../images/photoshop/puppy-rumble.png";
+import ImageFractalBg from "../images/fractalBg.png";
+import ImageProfile from "../images/profile.jpg";
+
 import ImageDogsCropped from "../images/photoshop/puppy-rumble-cropped.png";
 import ImageSpringPicnic from "../images/photoshop/spring-picnic-cropped.jpg";
 import ImageStevonnie from "../images/photoshop/stevonnie-cropped.jpg";
@@ -11,8 +13,6 @@ import ImageMark from "../images/photography/mark-cropped.jpg";
 import ImageWesley from "../images/photography/wesley-cropped.jpg";
 import ImageRyan from "../images/photography/ryan-cropped.jpg";
 import ImagePlaceholder60 from "../images/60.png";
-
-import ImageOvercooked from "../images/overcooked.png";
 
 export default {
   HomePage: {
@@ -56,17 +56,26 @@ export default {
   },
   AboutPage: {
     mastHead: {
-      backgroundImage: ImageOvercooked
+      backgroundImage: ImageFractalBg,
+      title: "About"
     },
-    description:
-      "Independent developer who is passionate about learning more about programming",
+    me: [
+      {
+        content: {
+          image: { src: ImageProfile, alt: "Stephanie Hong" },
+          title: "Stephanie Hong",
+          content:
+            "<p>Graduated in 2018 from University of the Pacific with a Doctor of Pharmacy and a Minor in Computer Science.</p><p> As a young girl, I was an avid player of video games, and over the years, my interests expanded from playing games to creating them as well – resulting in a passion for computer programming. Over the years, I independently learned to build games and develop websites and feel ready to pursue a career where I can use the skills I've learned.</p>"
+        }
+      }
+    ],
     cards: [
       {
         content: {
           svg: "IconFindGroup",
-          title: "Looking For A Company",
+          title: "Looking For Opportunities",
           content:
-            "Play your way using the Looking for Group tool! You can control your gameplay experience by hosting a group with custom options, including restricting endorsement level, prior to queueing up for Quick Play, Play vs AI, or any competitive mode. Choose to join a team of like-minded people or assemble your own. Feel free to reach out at <a href='mailto:stephielhong@gmail.com'>stephielhong@gmail.com</a>."
+            "Passionate to learn more about programming. Looking to join a team of like-minded individuals. Feel free to reach out at <a href='mailto:stephielhong@gmail.com'>stephielhong@gmail.com</a>."
         }
       }
     ],
@@ -76,8 +85,7 @@ export default {
           svg: "IconPointingHand",
           title: "Shot Caller",
           subtitle: "Leader, Strategist",
-          content:
-            "Earn Shot Caller endorsements by leading or executing strategies on the battlefield."
+          content: "Leads and executes strategies."
         }
       },
       {
@@ -85,8 +93,7 @@ export default {
           svg: "IconFistBump",
           title: "Good Teammate",
           subtitle: "Helpful, Effective Communication",
-          content:
-            "Reward highly effective team players with a Good Teammate endorsement."
+          content: "Highly effective team player."
         }
       },
       {
@@ -94,8 +101,7 @@ export default {
           svg: "IconHandshake",
           title: "Sportsmanship",
           subtitle: "Positive, Respectful",
-          content:
-            "Grant Sportsmanship endorsements to players who are a positive influence in-game."
+          content: "Player who is a positive influence."
         }
       }
     ]
