@@ -33,7 +33,7 @@ function Button({ route, handleRoute, buttonType, classes, children }) {
   const renderLink = () => {
     if (handleRoute) {
       return (
-        <Link to={process.env.PUBLIC_URL + route} onClick={handleRoute}>
+        <Link to={route} onClick={handleRoute}>
           {renderContent()}
         </Link>
       );
