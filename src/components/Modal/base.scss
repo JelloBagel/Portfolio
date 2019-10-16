@@ -1,0 +1,76 @@
+.modal {
+  animation: modal-in 0.3s ease 1;
+  background-color: rgba(30, 30, 30, 0.5);
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 100%;
+  z-index: 1000;
+
+  button {
+    background-color: red;
+    fill: white;
+    position: absolute;
+    cursor: pointer;
+    right: 40px;
+    top: 80px;
+    transition: background-color 0.15s ease;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  video,
+  iframe {
+    height: 100%;
+    width: 100%;
+  }
+
+  img {
+    max-height: 100%;
+  }
+
+  &__body {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin: auto;
+    width: 50%;
+    z-index: 50;
+
+    @include mq-tablet {
+      width: 100%;
+    }
+  }
+}
+
+.playBtn {
+  &:after {
+    background-image: $youtubeBtn;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+  }
+
+  &:hover {
+    &:after {
+      background-image: $youtubeDarkBtn;
+      opacity: 0.3;
+      transition: opacity 0.5s, background-image 0.5s ease-in;
+    }
+  }
+}

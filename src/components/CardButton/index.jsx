@@ -16,6 +16,7 @@ function CardButton({ button, content }) {
         buttonType={button.buttonType}
         classes="cardButton__container"
         route={button.buttonRoute}
+        alt={button.buttonAlt}
         key={button.buttonRoute}
       >
         {content.image ? (
@@ -27,7 +28,9 @@ function CardButton({ button, content }) {
         ) : null}
         <div className="cardButton__container__text">
           {content.title ? (
-            <h4 className="cardButton__container__text__title">{content.title}</h4>
+            <h4 className="cardButton__container__text__title">
+              {content.title}
+            </h4>
           ) : null}
           {content.subtitle ? (
             <h4 className="cardButton__container__text__subtitle">
@@ -35,7 +38,9 @@ function CardButton({ button, content }) {
             </h4>
           ) : null}
           {content.content ? (
-            <p className="cardButton__container__text__content">{content.content}</p>
+            <p className="cardButton__container__text__content">
+              {content.content}
+            </p>
           ) : null}
         </div>
       </Button>

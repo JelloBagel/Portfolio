@@ -1,6 +1,9 @@
 $navHeight: 50px;
 $navFromTop: 80px;
 
+$youtubeBtn: url("../images/play-button.png");
+$youtubeDarkBtn: url("../images/play-button-dark.png");
+
 @mixin mq-phone {
   @media (max-width: 640px) {
     @content;

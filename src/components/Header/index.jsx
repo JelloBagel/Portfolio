@@ -1,5 +1,6 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { FormattedMessage } from "react-intl";
+import { withRouter } from "react-router-dom";
 import classNames from "classnames";
 
 import messages from "./messages";
@@ -11,11 +12,19 @@ import { useDockNav } from "./helper/useDockNav";
 import { IconX, IconHamburger } from "../Icons";
 import { useOutsideListener } from "../../utils/helpers/useOutsideListener";
 
-function Header() {
+function Header({ location }) {
+  // On route change scroll to top
+  useEffect(() => {
+    if (location.pathname && !location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname, location.hash]);
+
   const [isOpen, setIsOpen] = useState(false);
 
   // Get width of window upon resize
   const width = useWindowWidth();
+  console.log("width", width);
   const isMobile = !!(width < 768);
 
   // Get if user scrolled past nav
@@ -119,4 +128,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default withRouter(Header);

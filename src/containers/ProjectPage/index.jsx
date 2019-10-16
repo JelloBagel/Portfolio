@@ -2,35 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import PageHelmet from "../../components/PageHelmet";
-import Button from "../../components/Button";
 import Game from "../../components/Phaser";
-import Card from "../../components/Card";
+import CardButton from "../../components/CardButton";
 
 import CONTENT from "../CMS";
 
 function ProjectsPage() {
-  const renderGames = game => {
-    return (
-      <div className="game" key={game.title}>
-        <Button
-          buttonType="anchor"
-          classes="project-title"
-          route="/game-project-builds/block-breaker/index.html"
-        >
-          <h2>{game.title}</h2>
-        </Button>
-        {game.images.map(image => (
-          <Button
-            key={image.alt}
-            buttonType="modal"
-            classes="game__img"
-            alt={image.alt}
-            route={image.src}
-          ></Button>
-        ))}
-      </div>
-    );
-  };
+  // game route="/game-project-builds/block-breaker/index.html"
 
   return (
     <div className="projects">
@@ -46,14 +24,14 @@ function ProjectsPage() {
 
       <Game />
 
-      <div className="projects__games" style={{ backgroundImage: `url()` }}>
-        <div className="projects__games__container">
-          <h1 className="projects__games__container__title">
+      <div className="projects__games">
+        <div className="projects__container">
+          <h1 className="projects__container__title">
             {CONTENT.ProjectsPage.gamesTitle}
           </h1>
           {CONTENT.ProjectsPage.games
             ? CONTENT.ProjectsPage.games.map(card => (
-                <Card
+                <CardButton
                   content={card.content}
                   button={card.button}
                   key={card.content.title}
@@ -63,14 +41,14 @@ function ProjectsPage() {
         </div>
       </div>
 
-      <div className="projects__cards" style={{ backgroundImage: `url()` }}>
-        <div className="projects__cards__container">
-          <h1 className="projects__cards__container__title">
-            {CONTENT.ProjectsPage.cardTitle}
+      <div className="projects__videos">
+        <div className="projects__container">
+          <h1 className="projects__container__title">
+            {CONTENT.ProjectsPage.videosTitle}
           </h1>
-          {CONTENT.ProjectsPage.cards
-            ? CONTENT.ProjectsPage.cards.map(card => (
-                <Card
+          {CONTENT.ProjectsPage.videos
+            ? CONTENT.ProjectsPage.videos.map(card => (
+                <CardButton
                   content={card.content}
                   button={card.button}
                   key={card.content.title}
@@ -80,14 +58,14 @@ function ProjectsPage() {
         </div>
       </div>
 
-      <div className="projects__photos" style={{ backgroundImage: `url()` }}>
-        <div className="projects__photos__container">
-          <h1 className="projects__photos__container__title">
+      <div className="projects__photos">
+        <div className="projects__container">
+          <h1 className="projects__container__title">
             {CONTENT.ProjectsPage.photoTitle}
           </h1>
           {CONTENT.ProjectsPage.photos
             ? CONTENT.ProjectsPage.photos.map(card => (
-                <Card
+                <CardButton
                   content={card.content}
                   button={card.button}
                   key={card.content.title}

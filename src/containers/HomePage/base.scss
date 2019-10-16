@@ -10,6 +10,40 @@
   .numberToText__letters {
     padding-top: 100px;
   }
+
+  .cardButton:hover {
+    -webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+
+    .cardButton__container__img {
+      transform: scaleX(1.05) scaleY(1.05);
+      transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .cardButton__container__text {
+      background-color: rgba(0, 0, 0, 0.3);
+      -webkit-transition: all 0.4s ease-in-out;
+      transition: all 0.4s ease-in-out;
+
+      &__title {
+        transform: translateY(-10px);
+        transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      &__content {
+        transform: translateY(-10px);
+        transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+    }
+  }
+
+  .cardButton {
+    &__container {
+      &__img {
+        max-height: 250px;
+      }
+    }
+  }
 }
 
 .home__cards {

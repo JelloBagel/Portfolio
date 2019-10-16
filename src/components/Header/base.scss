@@ -169,22 +169,17 @@
       &__back--mobile {
         display: block;
         width: 100%;
-
-        & > div {
-          display: flex;
-          justify-content: flex-end;
-          width: 100%;
-
-          svg {
-            fill: $color-navTextMobile;
-            top: 5px;
-            right: 5px;
-            bottom: 5px;
-            left: 5px;
-            width: 24px;
-            height: 24px;
-            margin: 10px;
-          }
+        max-width: 50px;
+        
+        svg {
+          fill: $color-navTextMobile;
+          top: 5px;
+          right: 5px;
+          bottom: 5px;
+          left: 5px;
+          width: 24px;
+          height: 24px;
+          margin: 10px;
         }
       }
 

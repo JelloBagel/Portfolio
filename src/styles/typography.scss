@@ -23,9 +23,9 @@ $font-sans-serif-Lato: "Lato", "sans-serif";
   @include font-rendering;
 }
 
-@mixin font-sanN6 {
+@mixin font-sanN5Fira {
   font-family: $font-sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   @include font-rendering;
 }
 

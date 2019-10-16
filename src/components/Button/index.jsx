@@ -8,8 +8,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import { Modal } from "../Modal";
 
-function Button({ route, handleRoute, buttonType, classes, children }) {
+function Button({ route, handleRoute, buttonType, classes, children, alt }) {
   const renderAnchorTag = () => {
     if (handleRoute) {
       return (
@@ -42,39 +43,38 @@ function Button({ route, handleRoute, buttonType, classes, children }) {
   };
 
   const renderOnClick = () => {
-    return <div onClick={handleRoute}>{renderContent()}</div>;
+    return (
+      <button className={classes} onClick={handleRoute}>
+        {renderContent()}
+      </button>
+    );
   };
 
-  //TODO add modal
-
   const renderModal = () => {
-    return <div className="modal">{renderContent()}</div>;
+    return (
+      <Modal classes={classes} file={route} alt={alt} type={buttonType}>
+        {renderContent()}
+      </Modal>
+    );
   };
 
   const renderContent = () => {
     return children;
   };
 
-  let button = null;
-
   switch (buttonType) {
     case "anchor":
-      button = renderAnchorTag();
-      break;
+      return <button className={classes}>{renderAnchorTag()}</button>;
     case "link":
-      button = renderLink();
-      break;
+      return <button className={classes}>{renderLink()}</button>;
     case "onClick":
-      button = renderOnClick();
-      break;
-    case "modal":
-      button = renderModal();
-      break;
+      return renderOnClick();
+    case "modal-img":
+    case "modal-video":
+      return renderModal();
     default:
-      button = "No Button Type";
-      break;
+      return "No Button Type";
   }
-  return <button className={classes}>{button}</button>;
 }
 
 Button.propTypes = {

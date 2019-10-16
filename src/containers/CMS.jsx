@@ -5,19 +5,18 @@ import ImageBB3 from "../images/img-block-breaker/bb3.PNG";
 import ImageFractalBg from "../images/fractalBg.png";
 import ImageProfile from "../images/profile.jpg";
 
-import ImageDogsCropped from "../images/photoshop/puppy-rumble-cropped.png";
-import ImageSpringPicnic from "../images/photoshop/spring-picnic-cropped.jpg";
-import ImageStevonnie from "../images/photoshop/stevonnie-cropped.jpg";
-import ImageGrad from "../images/photography/grad-picture-cropped.png";
-import ImageMark from "../images/photography/mark-cropped.jpg";
-import ImageWesley from "../images/photography/wesley-cropped.jpg";
-import ImageRyan from "../images/photography/ryan-cropped.jpg";
-import ImagePlaceholder60 from "../images/60.png";
+import ImageDogs from "../images/photoshop/puppy-rumble.png";
+import ImageSpringPicnic from "../images/photoshop/spring-picnic.jpg";
+import ImageStevonnie from "../images/photoshop/stevonnie.jpg";
+import ImageGrad from "../images/photography/grad-picture.png";
+import ImageMark from "../images/photography/mark.jpg";
+import ImageWesley from "../images/photography/wesley.jpg";
+import ImageRyan from "../images/photography/ryan.jpg";
 
 export default {
   HomePage: {
     description: "Independent developer passionate about programming",
-    cardTitle: "Featured News",
+    videosTitle: "Featured News",
     cards: [
       {
         button: {
@@ -26,7 +25,7 @@ export default {
         },
         content: {
           title: "About Me",
-          image: { src: ImageDogsCropped, alt: "About Me" },
+          image: { src: ImageProfile, alt: "About Me" },
           content: "Puzzle-loving, game-playing, web-developing girl"
         }
       },
@@ -36,7 +35,7 @@ export default {
           buttonRoute: "/projects"
         },
         content: {
-          image: { src: ImageDogsCropped, alt: "Game Projects" },
+          image: { src: ImageBB2, alt: "Game Projects" },
           title: "Game Projects",
           content: "Games are how I learn best!"
         }
@@ -44,11 +43,11 @@ export default {
       {
         button: {
           buttonType: "link",
-          buttonRoute: "/media"
+          buttonRoute: "/projects"
         },
         content: {
           title: "Media",
-          image: { src: ImageDogsCropped, alt: "Media" },
+          image: { src: ImageDogs, alt: "Media" },
           content: "Past creative projects"
         }
       }
@@ -111,7 +110,9 @@ export default {
     games: [
       {
         button: {
-          buttonType: "modal"
+          buttonAlt: "Block Breaker Gameplay 1",
+          buttonRoute: ImageBB1,
+          buttonType: "modal-img"
         },
         content: {
           title: "Block Breaker Gameplay 1",
@@ -120,7 +121,9 @@ export default {
       },
       {
         button: {
-          buttonType: "modal"
+          buttonAlt: "Block Breaker Gameplay 2",
+          buttonRoute: ImageBB2,
+          buttonType: "modal-img"
         },
         content: {
           title: "Block Breaker Gameplay 2",
@@ -129,70 +132,72 @@ export default {
       },
       {
         button: {
-          buttonType: "modal"
+          buttonAlt: "Block Breaker Gameplay 3",
+          buttonRoute: ImageBB3,
+          buttonType: "modal-img"
         },
         content: {
           title: "Block Breaker Gameplay 3",
           image: { src: ImageBB3, alt: "Block Breaker Gameplay 3" }
         }
-      }
+      },
     ],
-    cardTitle: "Cinematography",
-    cards: [
+    videosTitle: "Cinematography",
+    videos: [
       {
         button: {
-          buttonType: "anchor",
-          buttonRoute: "https://www.youtube.com/watch?v=7i3aRYkAwrY"
+          buttonAlt: "About Us: Mean Girls",
+          buttonRoute: "https://www.youtube.com/embed/7i3aRYkAwrY",
+          buttonType: "modal-video"
         },
         content: {
-          title: "About Me",
+          title: "About APhA-ASP: Mean Girls Edition",
           image: {
-            src: "http://img.youtube.com/vi/7i3aRYkAwrY/mqdefault.jpg",
-            alt: "About Me"
-          },
-          content: "APhA-ASP Pacific Orientation Video 2016"
+            src: "http://img.youtube.com/vi/7i3aRYkAwrY/maxresdefault.jpg",
+            alt: "About Us: Mean Girls"
+          }
         }
       },
       {
         button: {
-          buttonType: "anchor",
-          buttonRoute: "https://www.youtube.com/watch?v=fpZKsoT8WbU"
+          buttonAlt: "Conference",
+          buttonRoute: "https://www.youtube.com/embed/fpZKsoT8WbU",
+          buttonType: "modal-video"
         },
         content: {
+          title: "APhA Conference in Baltimore, Maryland",
           image: {
-            src: "http://img.youtube.com/vi/fpZKsoT8WbU/mqdefault.jpg",
-            alt: "Game Projects"
-          },
-          title: "Game Projects",
-          content: "APhA Conference 2016 in Baltimore, Maryland"
+            src: "http://img.youtube.com/vi/fpZKsoT8WbU/maxresdefault.jpg",
+            alt: "Conference"
+          }
         }
       },
       {
         button: {
-          buttonType: "anchor",
-          buttonRoute: "https://www.youtube.com/watch?v=hMWMDmtauVQ"
+          buttonAlt: "Fair",
+          buttonRoute: "https://www.youtube.com/embed/hMWMDmtauVQ",
+          buttonType: "modal-video"
         },
         content: {
-          title: "Media",
+          title: "Pacific Spring Picnic: Superhero Themed",
           image: {
-            src: "http://img.youtube.com/vi/hMWMDmtauVQ/mqdefault.jpg",
-            alt: "Media"
-          },
-          content: "Pacific Spring Picnic: Superhero Themed"
+            src: "http://img.youtube.com/vi/hMWMDmtauVQ/maxresdefault.jpg",
+            alt: "Fair"
+          }
         }
       },
       {
         button: {
-          buttonType: "anchor",
-          buttonRoute: "https://www.youtube.com/watch?v=aBv9NiNHhhw"
+          buttonAlt: "Draw My Life",
+          buttonRoute: "https://www.youtube.com/embed/aBv9NiNHhhw",
+          buttonType: "modal-video"
         },
         content: {
-          title: "Draw My Life",
+          title: "Draw My Life: Pharmacists",
           image: {
-            src: "http://img.youtube.com/vi/aBv9NiNHhhw/mqdefault.jpg",
+            src: "http://img.youtube.com/vi/aBv9NiNHhhw/maxresdefault.jpg",
             alt: "Draw My Life"
-          },
-          content: "Draw My Life: Pharmacists"
+          }
         }
       }
     ],
@@ -200,75 +205,81 @@ export default {
     photos: [
       {
         button: {
-          buttonType: "modal"
+          buttonRoute: ImageDogs,
+          buttonType: "modal-img"
         },
         content: {
-          title: "Dogs",
-          image: { src: ImageDogsCropped, alt: "overwatch dogs" },
-          content: "Overwatch Heroes as Dogs"
+          title: "Overwatch Heroes as Dogs",
+          image: { src: ImageDogs, alt: "overwatch dogs" }
         }
       },
       {
         button: {
-          buttonType: "modal"
+          buttonAlt: "T-shirt",
+          buttonRoute: ImageSpringPicnic,
+          buttonType: "modal-img"
         },
         content: {
-          title: "T shirt",
-          image: { src: ImageSpringPicnic, alt: "T-shirt" },
-          content: "Pacific Spring Picnic 2016 T-Shirt Design"
+          title: "T shirt Design",
+          image: { src: ImageSpringPicnic, alt: "T-shirt" }
         }
       },
       {
         button: {
-          buttonType: "modal"
+          buttonAlt: "steven universe",
+          buttonRoute: ImageStevonnie,
+          buttonType: "modal-img"
         },
         content: {
-          title: "Stevonnie",
-          image: { src: ImageStevonnie, alt: "steven universe" },
-          content: "Steven Universe Cosplay with CG Background"
+          title: "Steven Universe Cosplay with CG Background",
+          image: { src: ImageStevonnie, alt: "steven universe" }
         }
       },
       {
         button: {
-          buttonType: "modal"
+          buttonAlt: "graduation photo with overwatch grad caps",
+          buttonRoute: ImageGrad,
+          buttonType: "modal-img"
         },
         content: {
-          title: "Graduation",
+          title: "Graduation Caps",
           image: {
             src: ImageGrad,
             alt: "graduation photo with overwatch grad caps"
-          },
-          content: "Photoshoot with graduation caps using tripod"
+          }
         }
       },
       {
         button: {
-          buttonType: "modal"
+          buttonAlt: "mark ruiz",
+          buttonRoute: ImageMark,
+          buttonType: "modal-img"
         },
         content: {
-          title: "Mark Ruiz",
-          image: { src: ImageMark, alt: "mark ruiz" },
-          content: "White Coat Ceremony 2017"
+          title: "White Coat Ceremony: Mark Ruiz",
+          image: { src: ImageMark, alt: "mark ruiz" }
         }
       },
       {
         button: {
-          buttonType: "modal"
+          buttonAlt: "wesley sweis",
+          buttonRoute: ImageWesley,
+          buttonType: "modal-img"
         },
         content: {
-          title: "Wesley Sweis",
-          image: { src: ImageWesley, alt: "wesley sweis" },
-          content: "Counseling at an independent pharmacy"
+          title: "Counseling Patients: Wesley Sweis",
+          image: { src: ImageWesley, alt: "wesley sweis" }
         }
       },
       {
         button: {
-          buttonType: "modal"
+          buttonAlt: "ryan abundo",
+          buttonRoute: ImageRyan,
+          buttonType: "modal-img"
         },
         content: {
-          title: "Ryan Abundo",
-          image: { src: ImageRyan, alt: "ryan abundo" },
-          content: "An aspiring musician/pharmacist"
+          title: "An aspiring musician/pharmacist: Ryan Abundo",
+          image: { src: ImageRyan, alt: "ryan abundo" }
         }
       }
     ]
