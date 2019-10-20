@@ -46,8 +46,10 @@ export default ({ type, alt, file, setIsModalOpen, isModalOpen }) => {
           >
             <IconX />
           </Button>
-          <div className="modal__body" ref={componentRef}>
-            {media}
+          <div className="modal__body">
+            <div className="modal__body__wrapper" ref={componentRef}>
+              {media}
+            </div>
           </div>
         </div>,
         appRoot

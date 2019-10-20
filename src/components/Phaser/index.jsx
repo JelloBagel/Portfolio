@@ -1,32 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Phaser from "phaser";
 
 import loading from "./Scenes/loading";
 import title from "./Scenes/title";
 import game from "./Scenes/game";
 
-const config = {
-  type: Phaser.AUTO,
-  width: 600,
-  height: 400,
-  parent: "phaser-game",
-  physics: {
-    default: "arcade",
-    arcade: {
-      gravity: { y: 300 },
-      debug: false
-    }
-  },
-  backgroundColor: "#E5E5E5",
-  scene: [loading, title, game]
-};
-
 export default React.memo(() => {
+  const gameWrapper = useRef();
+
   useEffect(() => {
-    const game = new Phaser.Game(config);
-    return () => game.destroy(true);
+    if (gameWrapper) {
+      const config = {
+        type: Phaser.AUTO,
+        width: gameWrapper.current.offsetWidth * window.devicePixelRatio,
+        height: gameWrapper.current.offsetHeight * window.devicePixelRatio,
+        parent: "phaser-game",
+        physics: {
+          default: "arcade",
+          arcade: {
+            gravity: { y: 300 },
+            debug: false
+          }
+        },
+        backgroundColor: "#E5E5E5",
+        scene: [loading, title, game]
+      };
+
+      const phaserGame = new Phaser.Game(config);
+      return () => phaserGame.destroy(true);
+    }
   }, []);
-  return <div id="phaser-game" />;
+
+  return <div ref={gameWrapper} id="phaser-game" />;
 });
 
 // let player;

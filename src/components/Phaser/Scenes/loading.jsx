@@ -8,8 +8,8 @@ import logoImg from "../../../images/game/logo.png";
 import subtitleBgImg from "../../../images/game/subtitle_bg.png";
 
 import hydrantImg from "../../../images/game/hydrant.png";
-import dudeImg from "../../../images/game/dude.png";
 import playerIdleImg from "../../../images/game/player_idle.png";
+import corgiRunShapes from "../../../images/game/corgi-run-shapes.json";
 
 export default class loading extends Phaser.Scene {
   constructor() {
@@ -26,13 +26,10 @@ export default class loading extends Phaser.Scene {
 
     this.load.image("hydrant", hydrantImg);
     this.load.spritesheet("player_idle", playerIdleImg, {
-      frameWidth: 100,
+      frameWidth: 90,
       frameHeight: 60
     });
-    this.load.spritesheet("dude", dudeImg, {
-      frameWidth: 32,
-      frameHeight: 48
-    });
+    this.load.json("shapes", corgiRunShapes);
   }
 
   create() {
@@ -46,7 +43,7 @@ export default class loading extends Phaser.Scene {
       fontFamily: '"Press Start 2P", cursive',
       fontSize: 15
     });
-    
+
     this.scene.start("title");
   }
 }

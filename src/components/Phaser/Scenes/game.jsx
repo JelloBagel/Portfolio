@@ -8,6 +8,9 @@ export default class game extends Phaser.Scene {
   create() {
     this.createEnvironment();
     this.createHeader();
+    this.shapes = this.cache.json.get("shapes");
+
+    this.gameOver = false;
 
     this.anims.create({
       key: "idle",
@@ -18,22 +21,38 @@ export default class game extends Phaser.Scene {
     this.player = this.physics.add.sprite(100, 247, "player_idle");
     this.player.setCollideWorldBounds(true);
     this.player.play("idle");
+    this.player.setGravityY(200);
     this.physics.add.collider(this.player, this.grounds);
 
-    this.hydrant1 = this.add.image(100, 253, "hydrant");
-    this.hydrant2 = this.add.image(200, 253, "hydrant");
-    this.hydrant3 = this.add.image(300, 253, "hydrant");
+    this.hydrants = this.physics.add.group();
+    this.physics.add.collider(this.hydrants, this.grounds);
+
+    this.time.addEvent({
+      delay: 2000,
+      callback: this.createHydrant,
+      callbackScope: this,
+      loop: true
+    });
 
     this.cursors = this.input.keyboard.createCursorKeys();
-
-    this.add.text(20, 20, "game...");
+    this.physics.add.collider(
+      this.player,
+      this.hydrants,
+      this.hitHydrant,
+      null,
+      this
+    );
   }
 
   update() {
-    this.moveHydrant(this.hydrant1, 1);
-    this.moveHydrant(this.hydrant2, 2);
-    this.moveHydrant(this.hydrant3, 3);
+    if (this.gameOver) {
+      this.scene.start("title");
+    }
+
     this.increaseScore();
+    if (this.cursors.space.isDown && this.player.body.touching.down) {
+      this.player.setVelocityY(-300);
+    }
   }
 
   createEnvironment() {
@@ -52,30 +71,44 @@ export default class game extends Phaser.Scene {
   }
 
   createHeader() {
-    this.add.image(300, 180, "subtitleBg");
+    const subtitleHeight = 100;
+    this.add.image(300, subtitleHeight, "subtitleBg");
     this.score = 0;
-    this.scoreText = this.add.text(300, 180, `score: ${this.score}`, {
-      fontFamily: '"Open Sans", Verdana',
-      fontSize: 15
-    });
+    this.scoreText = this.add.text(
+      300,
+      subtitleHeight,
+      `score: ${this.score}`,
+      {
+        fontFamily: '"Open Sans", Verdana',
+        fontSize: 15
+      }
+    );
     this.scoreText.setOrigin(0.5, 0.5);
 
-    this.add.image(300, 120, "logo");
-  }
-  moveHydrant(hydrant, speed) {
-    hydrant.x -= speed;
-    if (hydrant.x < 0) {
-      this.resetHydrantPos(hydrant);
-    }
+    this.add.image(300, 0, "logo").setOrigin(0.5, 0);
   }
 
-  resetHydrantPos(hydrant) {
-    hydrant.y = 253;
-    hydrant.x = 600;
+  createHydrant() {
+    const hydrant = this.hydrants.create(600, 253, "hydrant");
+    hydrant.setBounce(1);
+    hydrant.setVelocityX(-200);
+    hydrant.allowGravity = false;
   }
 
   increaseScore() {
     this.score += 10;
     this.scoreText.setText("Score: " + this.score);
+  }
+
+  hitHydrant(player, hydrant) {
+    player.setTint(0xff0000);
+
+    let gameOverDelay;
+    clearTimeout(gameOverDelay);
+    this.scene.pause();
+    gameOverDelay = setTimeout(() => {
+      this.scene.resume();
+      this.gameOver = true;
+    }, 2000);
   }
 }

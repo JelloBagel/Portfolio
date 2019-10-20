@@ -10,29 +10,20 @@
   width: 100%;
   z-index: 1000;
 
-  button {
-    background-color: red;
+  &__close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #eb588e;
+    border-radius: 4px;
     fill: white;
     position: absolute;
     cursor: pointer;
     right: 40px;
     top: 80px;
+    width: 30px;
+    height: 30px;
     transition: background-color 0.15s ease;
-  }
-
-  svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  video,
-  iframe {
-    height: 100%;
-    width: 100%;
-  }
-
-  img {
-    max-height: 100%;
   }
 
   &__body {
@@ -47,6 +38,27 @@
     @include mq-tablet {
       width: 100%;
     }
+  }
+
+  &__body__wrapper {
+    width: 100%;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  video,
+  iframe {
+    height: 100%;
+    width: 100%;
+    min-height: 400px;
+  }
+
+  img {
+    width: 100%;
+    max-height: 100%;
   }
 }
 

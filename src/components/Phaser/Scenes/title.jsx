@@ -12,10 +12,10 @@ export default class title extends Phaser.Scene {
     this.instructions = this.add.text(
       300,
       370,
-      "Press the Space key or click to make the corgi skate over obstacles.",
+      "Press the Space Bar to make the corgi skate over obstacles.",
       {
         fontFamily: '"Open Sans", Verdana',
-        fontSize: 15,
+        fontSize: 15, 
         color: "#000"
       }
     );
