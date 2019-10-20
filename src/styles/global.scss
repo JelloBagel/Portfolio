@@ -28,12 +28,76 @@ img {
   border-style: none;
 }
 
-.transition-enter {
-  opacity: 0;
-  z-index: 1;
+.transition-wrapper {
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+
+  &:before,
+  &:after {
+    background-size: cover;
+    background: transparent;
+    content: "";
+    position: fixed;
+    opacity: 1;
+    z-index: 9999;
+    transition: transform 0.5s ease-out;
+  }
+
+  &:before {
+    background: black;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+  }
+
+  &:after {
+    background: palevioletred;
+    width: 455px;
+    height: 535px;
+    bottom: 0;
+    right: 0;
+    transform: translateX(-100vw);
+  }
 }
 
-.transition-enter-active {
+.transition--appear,
+.transition--enter,
+.transition--exit {
+  opacity: 0;
+}
+
+.transition--appear-active,
+.transition--enter-active,
+.transition--exit-active {
   opacity: 1;
-  transition: opacity 290ms ease-in;
+
+  &:before {
+    transform: scale(1);
+  }
+
+  &:after {
+    transform: scale(1);
+  }
+}
+
+.transition--enter-done {
+  opacity: 1;
+
+  &:before,
+  &:after {
+    transform: translateX(100vw);
+  }
+}
+
+.transition--exit-done {
+  opacity: 1;
+
+  &:before,
+  &:after {
+    transform: translateX(-100vw);
+  }
 }

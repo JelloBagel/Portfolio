@@ -22,29 +22,23 @@
     position: relative;
     padding: 50px 0;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: -20px;
-      height: 20px;
-      width: 100%;
-      border-bottom: 20px solid $color-aboutpageEndorsementBg;
-      left: 30%;
-      -webkit-transform: translateX(680px);
-      transform: translateX(680px);
-      border-left: 20px solid transparent;
-    }
-
+    &::before,
     &::after {
       content: "";
       position: absolute;
       top: -20px;
-      height: 20px;
-      width: 100%;
-      border-bottom: 20px solid $color-aboutpageEndorsementBg;
-      right: 30%;
-      transform: translateX(-680px);
+      width: 30%;
+      border-bottom: 20px solid #f2f1ed;
+    }
+
+    &::before {
+      left: 0;
       border-right: 20px solid transparent;
+    }
+
+    &::after {
+      right: 0;
+      border-left: 20px solid transparent;
     }
 
     .card {

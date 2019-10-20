@@ -7,8 +7,8 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import { Modal } from "../Modal";
+import LinkDelay from "../LinkDelay";
 
 function Button({ route, handleRoute, buttonType, classes, children, alt }) {
   const renderAnchorTag = () => {
@@ -34,12 +34,12 @@ function Button({ route, handleRoute, buttonType, classes, children, alt }) {
   const renderLink = () => {
     if (handleRoute) {
       return (
-        <Link to={route} onClick={handleRoute}>
+        <LinkDelay to={route} onClick={handleRoute}>
           {renderContent()}
-        </Link>
+        </LinkDelay>
       );
     }
-    return <Link to={route}>{renderContent()}</Link>;
+    return <LinkDelay to={route}>{renderContent()}</LinkDelay>;
   };
 
   const renderOnClick = () => {

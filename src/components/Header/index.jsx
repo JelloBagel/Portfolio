@@ -24,7 +24,6 @@ function Header({ location }) {
 
   // Get width of window upon resize
   const width = useWindowWidth();
-  console.log("width", width);
   const isMobile = !!(width < 768);
 
   // Get if user scrolled past nav
