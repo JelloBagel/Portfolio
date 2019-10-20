@@ -17,6 +17,7 @@ function Header({ location }) {
   useEffect(() => {
     if (location.pathname && !location.hash) {
       window.scrollTo(0, 0);
+      setIsOpen(false);
     }
   }, [location.pathname, location.hash]);
 

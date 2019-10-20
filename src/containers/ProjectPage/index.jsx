@@ -13,10 +13,10 @@ function ProjectsPage() {
   return (
     <div className="projects">
       <PageHelmet
-        title="Projects Page"
+        title="Stephanie Hong"
         metas={[
           {
-            name: "description",
+            name: "Projects Page",
             content: "Stephanie Hong: Projects Page"
           }
         ]}

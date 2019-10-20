@@ -28,6 +28,24 @@ img {
   border-style: none;
 }
 
+@keyframes kiba-transition {
+  0% {
+    background-position: 0;
+  }
+  to {
+    background-position: -900px; // width of image
+  }
+}
+
+@keyframes kiba-transition-mobile {
+  0% {
+    background-position: 0;
+  }
+  to {
+    background-position: -600px; // width of image
+  }
+}
+
 .transition-wrapper {
   top: 0;
   left: 0;
@@ -46,7 +64,7 @@ img {
   }
 
   &:before {
-    background: black;
+    background: white;
     width: 100%;
     height: 100%;
     top: 0;
@@ -55,12 +73,29 @@ img {
   }
 
   &:after {
-    background: palevioletred;
-    width: 455px;
-    height: 535px;
-    bottom: 0;
-    right: 0;
+    bottom: calc(50vh - 307.5px); // Center background height
+    right: calc(50vw - 150px); // Center background width
     transform: translateX(-100vw);
+    background: url(../images/kiba-transition-900.png) 0 0 no-repeat;
+    height: 615px;
+    width: 300px; // A third of kiba transition
+    animation-name: kiba-transition;
+    animation-duration: 0.4s;
+    animation-timing-function: steps(3);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  @include mq-tablet {
+    &:after {
+      bottom: calc(50vh - 205px); // Center background height
+      right: calc(50vw - 100px); // Center background width
+      transform: translateX(-100vw);
+      background: url(../images/kiba-transition-600.png) 0 0 no-repeat;
+      height: 410px;
+      width: 200px; // A third of kiba transition
+      animation-name: kiba-transition-mobile;
+    }
   }
 }
 

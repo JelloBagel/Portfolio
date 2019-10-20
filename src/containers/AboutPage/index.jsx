@@ -15,7 +15,7 @@ function AboutPage() {
           title="Stephanie Hong"
           metas={[
             {
-              name: "description",
+              name: "About Page",
               content: "Stephanie Hong: About Page"
             }
           ]}

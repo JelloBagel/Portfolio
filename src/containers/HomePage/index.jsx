@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import PageHelmet from "../../components/PageHelmet";
 import CardButton from "../../components/CardButton";
 import NumberToText from "../../components/NumberToText";
-import { CSSTransition } from "react-transition-group";
 
 import CONTENT from "../CMS";
 
@@ -15,7 +14,7 @@ function HomePage() {
         title="Stephanie Hong"
         metas={[
           {
-            name: "description",
+            name: "Home Page",
             content: "Stephanie Hong: Home Page"
           }
         ]}
@@ -34,9 +33,6 @@ function HomePage() {
             : null
         }
       >
-        <CSSTransition in={true} timeout={5000} classNames="alert" appear>
-          <div className="hellooo">Hello</div>
-        </CSSTransition>
         <h1 className="home__cards__title">{CONTENT.HomePage.cardTitle}</h1>
         <div className="home__cards__container">
           {CONTENT.HomePage.cards
