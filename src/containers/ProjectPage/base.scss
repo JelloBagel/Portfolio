@@ -9,7 +9,7 @@
   max-width: 1440px;
   flex-wrap: wrap;
   margin: auto;
-  padding-bottom: 50px;
+  padding: 50px 0 200px;
 
   &__title {
     color: $color-project-sectionTitle;
@@ -91,8 +91,8 @@
   //     transparent 109px
   //   ),
   //   $color-footerBg;
-  background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
-  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  // background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
+  // background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
 
   .projects__container__title {
     color: black;
