@@ -40,24 +40,24 @@ function Header({ location }) {
   useOutsideListener(componentRef, handleOutsideClick);
 
   // Render brand logo and click
-  const renderBrand = classModifier => (
+  const renderBrand = (classModifier) => (
     <Button
       buttonType="link"
       classes={classNames("brand__btn", {
-        [`brand__btn--${classModifier}`]: !!classModifier
+        [`brand__btn--${classModifier}`]: !!classModifier,
       })}
       route="/"
       handleRoute={() => setIsOpen(false)}
     >
       <img
         className={classNames("brand__img", {
-          [`brand__img--${classModifier}`]: !!classModifier
+          [`brand__img--${classModifier}`]: !!classModifier,
         })}
         src={imgLogo}
         alt="navigation toggler"
       />
 
-      <FormattedMessage {...messages.home} />
+      {/* <FormattedMessage {...messages.home} /> */}
     </Button>
   );
 
@@ -66,10 +66,10 @@ function Header({ location }) {
       className={classNames(
         "navigation",
         {
-          "is-docked": isMobile || isDocked
+          "is-docked": isMobile || isDocked,
         },
         {
-          "is-mobile": isMobile
+          "is-mobile": isMobile,
         }
       )}
     >
@@ -86,7 +86,7 @@ function Header({ location }) {
         <div className="navigation__container__brand">{renderBrand()}</div>
         <div
           className={classNames("navigation__container__main", {
-            "mobile-is-open": isOpen
+            "mobile-is-open": isOpen,
           })}
           ref={componentRef}
         >

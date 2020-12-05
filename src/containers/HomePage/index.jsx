@@ -15,8 +15,8 @@ function HomePage() {
         metas={[
           {
             name: "Home Page",
-            content: "Stephanie Hong: Home Page"
-          }
+            content: "Stephanie Hong: Home Page",
+          },
         ]}
       />
 
@@ -25,7 +25,7 @@ function HomePage() {
         description={CONTENT.HomePage.description}
       />
 
-      <div
+      {/* <div
         className="home__cards"
         style={
           CONTENT.HomePage.cardBackground
@@ -45,7 +45,7 @@ function HomePage() {
               ))
             : null}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
@@ -56,7 +56,7 @@ HomePage.propTypes = {
   repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
   onSubmitForm: PropTypes.func,
   username: PropTypes.string,
-  onChangeUsername: PropTypes.func
+  onChangeUsername: PropTypes.func,
 };
 
 export default HomePage;

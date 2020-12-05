@@ -1,4 +1,6 @@
 $color-pageBackground: #f6f6f6;
+$color-about1: #f2f1ed;
+$color-about2: white;
 
 $color-hamburger: #4b535d;
 $color-navBg: #f2f1ed;
@@ -16,10 +18,11 @@ $color-cardContent: black;
 $color-cardButtonTitle: #019ef9;
 $color-cardButtonContent: #fff;
 
-$color-homepageHeader: #1d1f20;
-$color-homepageNewsTitle: #4b535d;
+$color-homepageHeader: $color-navText;
+$color-homepageHeaderSubtitle: $color-navHover;
+$color-homepageNewsTitle: $color-footerBg;
 
 $color-aboutpageEndorsementBg: #f2f1ed;
 $color-aboutpageEndorsementTitle: #4b535d;
 
-$color-project-sectionTitle: #f6f6f6;;
+$color-project-sectionTitle: #f6f6f6;

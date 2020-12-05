@@ -2,13 +2,13 @@
 
 $colors: (
   background: $color-homepageHeader,
-  text: #eee
+  text: $color-homepageHeaderSubtitle,
 );
 
 $font: (
   family: sans-serif,
   size: 24px,
-  letter-spacing: 0
+  letter-spacing: 0,
 );
 
 $config: (
@@ -25,8 +25,8 @@ $config: (
     "6",
     "7",
     "8",
-    "9"
-  )
+    "9",
+  ),
 );
 
 // ----------------------------------
@@ -80,7 +80,7 @@ $config: (
 
 .numberToText {
   text-align: center;
-  height: 700px;
+  height: 100vh;
   display: flex;
   background-color: color(background);
 

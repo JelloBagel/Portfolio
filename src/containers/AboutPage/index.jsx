@@ -1,6 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { FormattedMessage } from "react-intl";
 
+import messages from "../../components/Footer/messages";
+
+import Button from "../../components/Button";
+import { IconLinkedIn, IconGithub } from "../../components/Icons";
 import PageHelmet from "../../components/PageHelmet";
 import MastHead from "../../components/MastHead";
 import Card from "../../components/Card";
@@ -16,8 +21,8 @@ function AboutPage() {
           metas={[
             {
               name: "About Page",
-              content: "Stephanie Hong: About Page"
-            }
+              content: "Stephanie Hong: About Page",
+            },
           ]}
         />
 
@@ -29,27 +34,10 @@ function AboutPage() {
 
         <div className="about__me">
           {CONTENT.AboutPage.me
-            ? CONTENT.AboutPage.me.map(card => (
+            ? CONTENT.AboutPage.me.map((card) => (
                 <Card key={card.content.title} content={card.content} />
               ))
             : null}
-        </div>
-
-        <div
-          className="about__cards"
-          style={
-            CONTENT.AboutPage.cardBackground
-              ? { backgroundImage: `url(${CONTENT.AboutPage.cardBackground})` }
-              : null
-          }
-        >
-          <div className="about__cards__container">
-            {CONTENT.AboutPage.cards
-              ? CONTENT.AboutPage.cards.map(card => (
-                  <Card key={card.content.title} content={card.content} />
-                ))
-              : null}
-          </div>
         </div>
 
         <div
@@ -65,10 +53,49 @@ function AboutPage() {
           </h1>
           <div className="about__endorsements__container">
             {CONTENT.AboutPage.endorsements
-              ? CONTENT.AboutPage.endorsements.map(card => (
+              ? CONTENT.AboutPage.endorsements.map((card) => (
                   <Card key={card.content.title} content={card.content} />
                 ))
               : null}
+          </div>
+        </div>
+
+        <div
+          className="about__cards"
+          style={
+            CONTENT.AboutPage.cardBackground
+              ? { backgroundImage: `url(${CONTENT.AboutPage.cardBackground})` }
+              : null
+          }
+        >
+          <div className="about__cards__container">
+            {CONTENT.AboutPage.cards
+              ? CONTENT.AboutPage.cards.map((card) => (
+                  <Card key={card.content.title} content={card.content} />
+                ))
+              : null}
+          </div>
+        </div>
+
+        <div className="footer__social">
+          <div className="footer__social__container">
+            <h1 className="footer__social__container__title">
+              <FormattedMessage {...messages.socialMessage} />
+            </h1>
+            <Button
+              buttonType="anchor"
+              classes="footer__social__container__btn"
+              route="https://github.com/JelloBagel"
+            >
+              <IconGithub />
+            </Button>
+            <Button
+              buttonType="anchor"
+              classes="footer__social__container__btn"
+              route="https://www.linkedin.com/in/stephanie-hong-jellobagel/"
+            >
+              <IconLinkedIn />
+            </Button>
           </div>
         </div>
       </div>
@@ -82,7 +109,7 @@ AboutPage.propTypes = {
   repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
   onSubmitForm: PropTypes.func,
   username: PropTypes.string,
-  onChangeUsername: PropTypes.func
+  onChangeUsername: PropTypes.func,
 };
 
 export default AboutPage;
