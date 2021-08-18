@@ -38,7 +38,7 @@ function Footer() {
               <a href="https://www.linkedin.com/in/stephanie-hong-jellobagel/">
                 STEPHANIE HONG
               </a>
-            )
+            ),
           }}
         />
       </div>

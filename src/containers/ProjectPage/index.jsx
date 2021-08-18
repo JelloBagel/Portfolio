@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import Footer from "../../components/Footer";
 import PageHelmet from "../../components/PageHelmet";
 import Game from "../../components/Phaser";
 import CardButton from "../../components/CardButton";
@@ -17,8 +18,8 @@ function ProjectsPage() {
         metas={[
           {
             name: "Projects Page",
-            content: "Stephanie Hong: Projects Page"
-          }
+            content: "Stephanie Hong: Projects Page",
+          },
         ]}
       />
 
@@ -30,7 +31,7 @@ function ProjectsPage() {
             {CONTENT.ProjectsPage.gamesTitle}
           </h1>
           {CONTENT.ProjectsPage.games
-            ? CONTENT.ProjectsPage.games.map(card => (
+            ? CONTENT.ProjectsPage.games.map((card) => (
                 <CardButton
                   content={card.content}
                   button={card.button}
@@ -47,7 +48,7 @@ function ProjectsPage() {
             {CONTENT.ProjectsPage.videosTitle}
           </h1>
           {CONTENT.ProjectsPage.videos
-            ? CONTENT.ProjectsPage.videos.map(card => (
+            ? CONTENT.ProjectsPage.videos.map((card) => (
                 <CardButton
                   content={card.content}
                   button={card.button}
@@ -64,7 +65,7 @@ function ProjectsPage() {
             {CONTENT.ProjectsPage.photoTitle}
           </h1>
           {CONTENT.ProjectsPage.photos
-            ? CONTENT.ProjectsPage.photos.map(card => (
+            ? CONTENT.ProjectsPage.photos.map((card) => (
                 <CardButton
                   content={card.content}
                   button={card.button}
@@ -74,6 +75,8 @@ function ProjectsPage() {
             : null}
         </div>
       </div>
+
+      <Footer></Footer>
     </div>
   );
 }
@@ -84,7 +87,7 @@ ProjectsPage.propTypes = {
   repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
   onSubmitForm: PropTypes.func,
   username: PropTypes.string,
-  onChangeUsername: PropTypes.func
+  onChangeUsername: PropTypes.func,
 };
 
 export default ProjectsPage;

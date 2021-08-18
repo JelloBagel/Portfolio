@@ -1,11 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { FormattedMessage } from "react-intl";
 
-import messages from "../../components/Footer/messages";
-
-import Button from "../../components/Button";
-import { IconLinkedIn, IconGithub } from "../../components/Icons";
+import Footer from "../../components/Footer";
 import PageHelmet from "../../components/PageHelmet";
 import MastHead from "../../components/MastHead";
 import Card from "../../components/Card";
@@ -77,27 +73,7 @@ function AboutPage() {
           </div>
         </div>
 
-        <div className="footer__social">
-          <div className="footer__social__container">
-            <h1 className="footer__social__container__title">
-              <FormattedMessage {...messages.socialMessage} />
-            </h1>
-            <Button
-              buttonType="anchor"
-              classes="footer__social__container__btn"
-              route="https://github.com/JelloBagel"
-            >
-              <IconGithub />
-            </Button>
-            <Button
-              buttonType="anchor"
-              classes="footer__social__container__btn"
-              route="https://www.linkedin.com/in/stephanie-hong-jellobagel/"
-            >
-              <IconLinkedIn />
-            </Button>
-          </div>
-        </div>
+        <Footer></Footer>
       </div>
     </div>
   );
